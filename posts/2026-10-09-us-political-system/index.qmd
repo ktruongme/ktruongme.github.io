@@ -1,0 +1,56 @@
+---
+title: "How the US Political System Works"
+subtitle: "Notes from someone used to a parliamentary system"
+date: 2026-10-09
+categories: [politics, usa]
+draft: true          # remove this line when the post is ready to publish
+---
+
+::: {.callout-note}
+## Placeholder
+This is a draft outline. Replace the *TODO* notes with your own writing.
+:::
+
+## Why I'm writing this
+
+*TODO: what made you curious, and who this post is for.*
+
+## The Constitution and separation of powers
+
+The US Constitution (1787) splits power between three branches that check each other:
+
+| Branch | Who | How they get there |
+|---|---|---|
+| Legislative | Congress: Senate (100) + House of Representatives (435) | Elected: senators for 6 years, representatives for 2 |
+| Executive | President | Elected every 4 years, at most two terms |
+| Judicial | Supreme Court (9 justices) | Nominated by the president, confirmed by the Senate, serve for life |
+
+*TODO: examples of checks and balances, e.g. veto, impeachment, judicial review.*
+
+## Federalism: the role of the states
+
+*TODO: what the 50 states decide themselves versus the federal government.*
+
+## Elections and the Electoral College
+
+The president is not chosen by the national popular vote but by 538 electors, and 270 are needed to win.[^1]
+
+*TODO: how this shapes campaigns and "swing states".*
+
+[^1]: Most states give all their electors to the candidate who wins the state's popular vote.
+
+## Why two parties?
+
+*TODO: first-past-the-post voting and its effects.*
+
+## Compared with Norway
+
+*TODO: your comparison. Some starting points:*
+
+- Norway is a parliamentary system: the prime minister needs the support of the Storting (169 seats).
+- Seats are shared by proportional representation, so many parties are in parliament.
+- The Storting cannot be dissolved early, so elections are every four years.
+
+## My take
+
+*TODO*
