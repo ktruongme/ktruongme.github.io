@@ -241,6 +241,39 @@ p code:not(.sourceCode), li code:not(.sourceCode) {
   &.active { color: $primary; font-weight: 600; }
 }
 
+.quarto-categories a, .quarto-categories a:hover {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+// ---------- Series (filters/series.lua) ----------
+.series-box {
+  font-family: $ui-font;
+  background: $surface;
+  border: 1px solid $rule;
+  border-left: 4px solid $primary;
+  border-radius: $border-radius;
+  padding: 1rem 1.3rem;
+  margin: 0 0 2.2rem;
+  .series-label {
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: $muted;
+    a { color: $primary !important; text-decoration: none !important; font-weight: 600; }
+  }
+  .series-list {
+    margin: .6rem 0 0;
+    padding-left: 1.3rem;
+    font-size: .92rem;
+    li { margin: .2rem 0; }
+    li.current { font-weight: 600; }
+    li.current::marker { color: $primary; }
+    a { color: $body-color !important; }
+  }
+}
+.post-item .post-part { color: $primary; font-weight: 600; }
+
 // ---------- About page ----------
 .about-entity .about-link {
   font-family: $ui-font;

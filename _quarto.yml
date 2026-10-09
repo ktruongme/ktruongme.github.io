@@ -7,6 +7,10 @@ website:
   title: "myblog"
   navbar:
     right:
+      - text: Series
+        menu:
+          - text: Data modelling
+            href: series/data-modelling.qmd
       - about.qmd
       - icon: github
         href: https://github.com/ktruongme
@@ -28,6 +32,8 @@ format:
     smooth-scroll: true
     link-external-newwindow: true
     respect-user-color-scheme: true
+    filters:
+      - filters/series.lua
 
 
 

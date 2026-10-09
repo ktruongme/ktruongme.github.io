@@ -1,0 +1,37 @@
+---
+title: "Star Schemas: Facts and Dimensions"
+subtitle: "Why analysts love a boring table layout"
+date: 2026-10-09
+categories: [data-modelling]
+series: "Data modelling"
+series-part: 2
+---
+
+::: {.callout-note}
+## Dummy post
+This is a placeholder article to show how a series looks. Replace or delete it.
+:::
+
+## The idea
+
+A **star schema** puts one big *fact* table (events you measure, like sales) in the middle,
+surrounded by small *dimension* tables (who, what, where, when).
+
+| Table | Example columns |
+|---|---|
+| `fact_sales` | `date_id`, `product_id`, `store_id`, `quantity`, `revenue` |
+| `dim_product` | `product_id`, `name`, `category`, `brand` |
+| `dim_store` | `store_id`, `city`, `country` |
+| `dim_date` | `date_id`, `day`, `month`, `year`, `is_holiday` |
+
+## A query
+
+```sql
+SELECT d.year, p.category, SUM(f.revenue) AS revenue
+FROM fact_sales f
+JOIN dim_date d    ON f.date_id = d.date_id
+JOIN dim_product p ON f.product_id = p.product_id
+GROUP BY d.year, p.category;
+```
+
+*TODO: trade-offs versus a normalized (3NF) model.*

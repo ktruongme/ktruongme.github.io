@@ -1,0 +1,14 @@
+---
+title: "Data modelling"
+subtitle: "A series on how to structure data so it's easy to analyse"
+listing:
+  contents: "../posts/*/index.qmd"
+  include:
+    series: "Data modelling"
+  sort: "series-part asc"
+  template: ../posts.ejs
+  fields: [date, title, subtitle, description, categories, reading-time, series-part]
+  date-format: "MMM D, YYYY"
+---
+
+*TODO: a short intro to the series: who it's for, and what you'll cover.*

@@ -5,6 +5,7 @@
 ```{=html}
 <a class="post-link no-external" href="<%- item.path %>">
   <div class="post-meta">
+    <% if (item['series-part']) { %><span class="post-part">Part <%= item['series-part'] %></span><span class="post-dot">·</span><% } %>
     <% if (item.date) { %><span><%= item.date %></span><% } %>
     <% if (item['reading-time']) { %><span class="post-dot">·</span><span><%= item['reading-time'] %> read</span><% } %>
   </div>

@@ -2,7 +2,9 @@
 title: "Post With Code"
 author: "Harlow Malloc"
 date: "2026-10-09"
-categories: [news, code, analysis]
+categories: [data-modelling, code]
+series: "Data modelling"
+series-part: 1
 image: "image.jpg"
 ---
 
