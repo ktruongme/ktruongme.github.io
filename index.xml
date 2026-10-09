@@ -10,7 +10,7 @@
 <atom:link href="https://ktruongme.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description>A blog built with Quarto</description>
 <generator>quarto-1.10.19</generator>
-<lastBuildDate>Thu, 08 Oct 2026 22:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 09 Oct 2026 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Post With Code</title>
   <dc:creator>Harlow Malloc</dc:creator>
@@ -30,7 +30,7 @@
   <category>code</category>
   <category>analysis</category>
   <guid>https://ktruongme.github.io/posts/post-with-code/</guid>
-  <pubDate>Thu, 08 Oct 2026 22:00:00 GMT</pubDate>
+  <pubDate>Fri, 09 Oct 2026 00:00:00 GMT</pubDate>
   <media:content url="https://ktruongme.github.io/posts/post-with-code/image.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
@@ -52,7 +52,7 @@
  ]]></description>
   <category>news</category>
   <guid>https://ktruongme.github.io/posts/welcome/</guid>
-  <pubDate>Mon, 05 Oct 2026 22:00:00 GMT</pubDate>
+  <pubDate>Tue, 06 Oct 2026 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
