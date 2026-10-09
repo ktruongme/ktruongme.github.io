@@ -1,0 +1,256 @@
+/*-- scss:defaults --*/
+// Shared typography and layout. Colors live in light.scss / dark.scss.
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap');
+
+$font-family-sans-serif: "Source Serif 4", Georgia, serif;   // body text
+$headings-font-family: "Fraunces", Georgia, serif;
+$font-family-monospace: "JetBrains Mono", ui-monospace, monospace;
+$font-size-base: 1.1rem;
+$line-height-base: 1.72;
+$headings-font-weight: 600;
+$border-radius: .6rem;
+
+$grid-body-width: 720px;      // narrower reading column
+$grid-margin-width: 260px;
+
+$ui-font: "Inter", system-ui, -apple-system, sans-serif;
+
+/*-- scss:rules --*/
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background-color .3s ease, color .3s ease;
+}
+
+// Small "interface" text uses a sans-serif font
+.navbar, .quarto-title-meta, .quarto-listing-category, .quarto-listing-category-title,
+#TOC, .sidebar, figcaption, .table, .callout-title-container, .footer,
+.post-meta, .post-cats, .hero-kicker, .about-links {
+  font-family: $ui-font;
+}
+
+::selection { background: rgba($primary, .18); }
+
+// ---------- Navbar ----------
+.navbar {
+  border-bottom: 1px solid $rule;
+  box-shadow: none;
+  .navbar-title {
+    font-family: $headings-font-family;
+    font-weight: 700;
+    font-size: 1.35rem;
+    letter-spacing: -.01em;
+  }
+  .nav-link { font-size: .88rem; font-weight: 500; }
+}
+
+// ---------- Headings & article ----------
+h1, h2, h3, h4 { letter-spacing: -.015em; }
+h2 { margin-top: 2.6rem; padding-bottom: 0; border-bottom: none; }
+h3 { margin-top: 2rem; }
+
+.quarto-title-block .quarto-title {
+  padding-top: 2.5rem;
+  h1.title {
+    font-size: clamp(2.3rem, 5.5vw, 3.4rem);
+    line-height: 1.08;
+    font-weight: 700;
+    letter-spacing: -.025em;
+  }
+  .subtitle {
+    font-family: $font-family-sans-serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: $muted;
+    margin-top: .6rem;
+  }
+  .quarto-categories .quarto-category {
+    font-family: $ui-font;
+    text-transform: lowercase;
+    border: 1px solid $rule;
+    border-radius: 999px;
+    padding: .15rem .65rem;
+    font-size: .72rem;
+    opacity: 1;
+    color: $muted;
+  }
+}
+.quarto-title-meta {
+  border-bottom: 1px solid $rule;
+  padding-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
+  .quarto-title-meta-heading {
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-size: .68rem;
+    color: $muted;
+  }
+}
+
+#quarto-document-content {
+  a:not(.nav-link):not(.anchorjs-link):not(.footnote-ref):not(.post-link) {
+    color: $primary;
+    text-decoration: underline;
+    text-decoration-color: rgba($primary, .35);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    transition: text-decoration-color .2s;
+    &:hover { text-decoration-color: $primary; }
+  }
+}
+
+blockquote, .blockquote {
+  border-left: 3px solid $primary;
+  padding: .2rem 0 .2rem 1.3rem;
+  margin: 2rem 0;
+  font-style: italic;
+  font-size: 1.18rem;
+  color: $body-color;
+}
+
+hr { border-color: $rule; opacity: 1; margin: 3rem auto; width: 40%; }
+
+// ---------- Code, tables, callouts ----------
+div.sourceCode, pre.sourceCode {
+  background: $surface;
+  border: 1px solid $rule;
+  border-radius: $border-radius;
+}
+code { font-size: .86em; }
+p code:not(.sourceCode), li code:not(.sourceCode) {
+  background: $surface;
+  padding: .1em .35em;
+  border-radius: .3rem;
+}
+
+.table {
+  font-size: .9rem;
+  thead th {
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    font-size: .72rem;
+    color: $muted;
+    border-bottom: 2px solid $rule !important;
+  }
+  td { border-color: $rule; }
+}
+
+.callout {
+  border-radius: $border-radius;
+  border: 1px solid $rule !important;
+  border-left-width: 4px !important;
+}
+
+.footnotes { font-size: .92rem; color: $muted; }
+
+// ---------- Home page hero ----------
+.home #title-block-header { display: none; }   // the hero replaces the page title
+
+.hero {
+  padding: 3.5rem 0 2.2rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid $rule;
+  .hero-kicker {
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    font-size: .72rem;
+    font-weight: 600;
+    color: $primary;
+  }
+  .hero-title {
+    font-family: $headings-font-family;
+    font-size: clamp(2.5rem, 6.5vw, 4rem);
+    line-height: 1.04;
+    font-weight: 600;
+    letter-spacing: -.03em;
+    margin: .8rem 0 1.1rem;
+    em { color: $primary; font-weight: 500; }
+  }
+  .hero-lead {
+    font-size: 1.22rem;
+    color: $muted;
+    max-width: 34rem;
+    margin: 0;
+  }
+}
+
+// ---------- Custom post list (posts.ejs) ----------
+.post-item {
+  position: relative;
+  padding: 1.7rem 0 1.6rem;
+  border-bottom: 1px solid $rule;
+  transition: transform .25s ease;
+
+  &::before {                       // accent bar that slides in on hover
+    content: "";
+    position: absolute;
+    left: -1.2rem; top: 1.9rem; bottom: 1.9rem;
+    width: 3px;
+    border-radius: 3px;
+    background: $primary;
+    transform: scaleY(0);
+    transition: transform .25s ease;
+  }
+  &:hover { transform: translateX(.35rem); }
+  &:hover::before { transform: scaleY(1); }
+
+  a.post-link { color: inherit; text-decoration: none; display: block; }
+  .post-meta {
+    font-size: .75rem;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: $muted;
+    .post-dot { margin: 0 .45rem; }
+  }
+  .post-title {
+    font-family: $headings-font-family;
+    font-size: 1.65rem;
+    line-height: 1.2;
+    font-weight: 600;
+    margin: .45rem 0 .35rem;
+    transition: color .2s;
+  }
+  &:hover .post-title { color: $primary; }
+  .post-subtitle { font-style: italic; color: $muted; margin: 0 0 .3rem; }
+  .post-desc { margin: .3rem 0 0; }
+  .post-cats { margin-top: .7rem; display: flex; flex-wrap: wrap; gap: .4rem; }
+  .post-cat {
+    font-size: .7rem;
+    text-transform: lowercase;
+    letter-spacing: .04em;
+    padding: .12rem .6rem;
+    border: 1px solid $rule;
+    border-radius: 999px;
+    color: $muted;
+    cursor: pointer;
+    transition: border-color .2s, color .2s;
+    &:hover { border-color: $primary; color: $primary; }
+  }
+}
+
+// Category filter in the margin
+.quarto-listing-category-title {
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .7rem;
+  color: $muted;
+}
+.quarto-listing-category .category {
+  font-size: .85rem;
+  color: $muted;
+  &.active { color: $primary; font-weight: 600; }
+}
+
+// ---------- About page ----------
+.about-entity .about-link {
+  font-family: $ui-font;
+  border-radius: 999px !important;
+  font-size: .8rem;
+}
+
+// ---------- Footer ----------
+.nav-footer {
+  border-top: 1px solid $rule;
+  font-size: .8rem;
+  color: $muted;
+}

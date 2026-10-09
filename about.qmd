@@ -2,18 +2,25 @@
 title: "About"
 image: profile.jpg
 about:
-  template: jolla
+  template: trestles
+  image-shape: round
+  image-width: 14em
   links:
-    - icon: bluesky
-      text: Bluesky
-      href: https://bsky.app/
+    - icon: github
+      text: GitHub
+      href: https://github.com/ktruongme
     - icon: linkedin
       text: LinkedIn
       href: https://linkedin.com
-    - icon: github
-      text: Github
-      href: https://github.com
-
+    - icon: rss
+      text: RSS
+      href: index.xml
 ---
 
-About this blog
+*TODO: replace this with a few lines about yourself, and swap `profile.jpg` for your own photo.*
+
+This blog is where I think out loud. I write about:
+
+- **Machine learning**: how algorithms work, and notes on papers I read.
+- **Society and politics**: essays on things I keep thinking about.
+- **Norway and Vietnam**: cultural differences I notice in everyday life.

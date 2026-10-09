@@ -1,17 +1,22 @@
 ---
 title: "myblog"
+body-classes: home
 listing:
   contents: posts
   feed: true
   sort: "date desc"
-  type: default
+  template: posts.ejs
   fields: [date, title, subtitle, description, categories, reading-time]
   date-format: "MMM D, YYYY"
   categories: true
   sort-ui: false
   filter-ui: false
-page-layout: full
-title-block-banner: true
 ---
 
-
+```{=html}
+<section class="hero">
+  <div class="hero-kicker">A notebook · Est. 2026</div>
+  <h1 class="hero-title no-anchor">Thinking out loud about <em>machines</em>, <em>society</em>, and life between two cultures.</h1>
+  <p class="hero-lead">Notes on machine learning and papers I read, essays on politics and society, and what I notice living in Norway with Vietnamese roots.</p>
+</section>
+```

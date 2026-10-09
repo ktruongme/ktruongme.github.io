@@ -1,0 +1,34 @@
+<% for (const item of items) { %>
+
+::: {.post-item <%= metadataAttrs(item) %>}
+
+```{=html}
+<a class="post-link no-external" href="<%- item.path %>">
+  <div class="post-meta">
+    <% if (item.date) { %><span><%= item.date %></span><% } %>
+    <% if (item['reading-time']) { %><span class="post-dot">·</span><span><%= item['reading-time'] %> read</span><% } %>
+  </div>
+  <h3 class="post-title no-anchor"><%= item.title %></h3>
+  <% if (item.subtitle) { %><p class="post-subtitle"><%= item.subtitle %></p><% } %>
+</a>
+```
+
+<% if (item.description) { %>
+<div class="post-desc">
+<%= item.description %>
+</div>
+<% } %>
+
+<% if (item.categories) { %>
+```{=html}
+<div class="post-cats">
+<% for (const category of item.categories) { %>
+<span class="post-cat" onclick="window.quartoListingCategory(btoa(encodeURIComponent('<%= category %>'))); return false;"><%= category %></span>
+<% } %>
+</div>
+```
+<% } %>
+
+:::
+
+<% } %>

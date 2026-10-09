@@ -4,5 +4,8 @@
 # (see https://quarto.org/docs/projects/code-execution.html#freeze)
 freeze: true
 
-# Enable banner style title blocks
-title-block-banner: true
+# Clean title block (no colored banner) with a table of contents on wide screens
+title-block-banner: false
+toc: true
+toc-title: "On this page"
+reading-time: true

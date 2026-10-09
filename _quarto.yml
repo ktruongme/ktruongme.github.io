@@ -10,14 +10,24 @@ website:
       - about.qmd
       - icon: github
         href: https://github.com/ktruongme
-      - icon: bluesky
-        href: https://bsky.app/
+      - icon: rss
+        href: index.xml
+  page-footer:
+    left: "© 2026 · Written in plain text, built with [Quarto](https://quarto.org)"
+    right:
+      - icon: github
+        href: https://github.com/ktruongme
+      - icon: rss
+        href: index.xml
 format:
   html:
     theme:
-      light: flatly
-      dark: darkly
-    css: styles.css
+      light: [flatly, styles/base.scss, styles/light.scss]
+      dark: [darkly, styles/base.scss, styles/dark.scss]
+    highlight-style: a11y
+    smooth-scroll: true
+    link-external-newwindow: true
+    respect-user-color-scheme: true
 
 
 
