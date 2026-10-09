@@ -18,7 +18,7 @@
     "href": "index.html",
     "title": "myblog",
     "section": "",
-    "text": "Post With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nOct 9, 2026\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nOct 6, 2026\n\n\nTristan O’Malley\n\n\n\n\n\nNo matching items"
+    "text": "Post With Code\n\n\n\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nOct 9, 2026\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nHow the US Political System Works\n\n\nNotes from someone used to a parliamentary system\n\n\n\npolitics\n\nusa\n\n\n\n\n\n\n\n\n\nOct 9, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nOct 6, 2026\n\n\nTristan O’Malley\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/welcome/index.html",
@@ -26,5 +26,68 @@
     "title": "Welcome To My Blog",
     "section": "",
     "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "posts/2026-10-09-us-political-system/index.html",
+    "href": "posts/2026-10-09-us-political-system/index.html",
+    "title": "How the US Political System Works",
+    "section": "",
+    "text": "NotePlaceholder\n\n\n\nThis is a draft outline. Replace the TODO notes with your own writing."
+  },
+  {
+    "objectID": "posts/2026-10-09-us-political-system/index.html#why-im-writing-this",
+    "href": "posts/2026-10-09-us-political-system/index.html#why-im-writing-this",
+    "title": "How the US Political System Works",
+    "section": "Why I’m writing this",
+    "text": "Why I’m writing this\nTODO: what made you curious, and who this post is for."
+  },
+  {
+    "objectID": "posts/2026-10-09-us-political-system/index.html#the-constitution-and-separation-of-powers",
+    "href": "posts/2026-10-09-us-political-system/index.html#the-constitution-and-separation-of-powers",
+    "title": "How the US Political System Works",
+    "section": "The Constitution and separation of powers",
+    "text": "The Constitution and separation of powers\nThe US Constitution (1787) splits power between three branches that check each other:\n\n\n\n\n\n\n\n\nBranch\nWho\nHow they get there\n\n\n\n\nLegislative\nCongress: Senate (100) + House of Representatives (435)\nElected: senators for 6 years, representatives for 2\n\n\nExecutive\nPresident\nElected every 4 years, at most two terms\n\n\nJudicial\nSupreme Court (9 justices)\nNominated by the president, confirmed by the Senate, serve for life\n\n\n\nTODO: examples of checks and balances, e.g. veto, impeachment, judicial review."
+  },
+  {
+    "objectID": "posts/2026-10-09-us-political-system/index.html#federalism-the-role-of-the-states",
+    "href": "posts/2026-10-09-us-political-system/index.html#federalism-the-role-of-the-states",
+    "title": "How the US Political System Works",
+    "section": "Federalism: the role of the states",
+    "text": "Federalism: the role of the states\nTODO: what the 50 states decide themselves versus the federal government."
+  },
+  {
+    "objectID": "posts/2026-10-09-us-political-system/index.html#elections-and-the-electoral-college",
+    "href": "posts/2026-10-09-us-political-system/index.html#elections-and-the-electoral-college",
+    "title": "How the US Political System Works",
+    "section": "Elections and the Electoral College",
+    "text": "Elections and the Electoral College\nThe president is not chosen by the national popular vote but by 538 electors, and 270 are needed to win.1\nTODO: how this shapes campaigns and “swing states”."
+  },
+  {
+    "objectID": "posts/2026-10-09-us-political-system/index.html#why-two-parties",
+    "href": "posts/2026-10-09-us-political-system/index.html#why-two-parties",
+    "title": "How the US Political System Works",
+    "section": "Why two parties?",
+    "text": "Why two parties?\nTODO: first-past-the-post voting and its effects."
+  },
+  {
+    "objectID": "posts/2026-10-09-us-political-system/index.html#compared-with-norway",
+    "href": "posts/2026-10-09-us-political-system/index.html#compared-with-norway",
+    "title": "How the US Political System Works",
+    "section": "Compared with Norway",
+    "text": "Compared with Norway\nTODO: your comparison. Some starting points:\n\nNorway is a parliamentary system: the prime minister needs the support of the Storting (169 seats).\nSeats are shared by proportional representation, so many parties are in parliament.\nThe Storting cannot be dissolved early, so elections are every four years."
+  },
+  {
+    "objectID": "posts/2026-10-09-us-political-system/index.html#my-take",
+    "href": "posts/2026-10-09-us-political-system/index.html#my-take",
+    "title": "How the US Political System Works",
+    "section": "My take",
+    "text": "My take\nTODO"
+  },
+  {
+    "objectID": "posts/2026-10-09-us-political-system/index.html#footnotes",
+    "href": "posts/2026-10-09-us-political-system/index.html#footnotes",
+    "title": "How the US Political System Works",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nMost states give all their electors to the candidate who wins the state’s popular vote.↩︎"
   }
 ]

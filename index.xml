@@ -34,6 +34,109 @@
   <media:content url="https://ktruongme.github.io/posts/post-with-code/image.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
+  <title>How the US Political System Works</title>
+  <link>https://ktruongme.github.io/posts/2026-10-09-us-political-system/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Placeholder
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is a draft outline. Replace the <em>TODO</em> notes with your own writing.</p>
+</div>
+</div>
+<section id="why-im-writing-this" class="level2">
+<h2 class="anchored" data-anchor-id="why-im-writing-this">Why I’m writing this</h2>
+<p><em>TODO: what made you curious, and who this post is for.</em></p>
+</section>
+<section id="the-constitution-and-separation-of-powers" class="level2">
+<h2 class="anchored" data-anchor-id="the-constitution-and-separation-of-powers">The Constitution and separation of powers</h2>
+<p>The US Constitution (1787) splits power between three branches that check each other:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Branch</th>
+<th>Who</th>
+<th>How they get there</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Legislative</td>
+<td>Congress: Senate (100) + House of Representatives (435)</td>
+<td>Elected: senators for 6 years, representatives for 2</td>
+</tr>
+<tr class="even">
+<td>Executive</td>
+<td>President</td>
+<td>Elected every 4 years, at most two terms</td>
+</tr>
+<tr class="odd">
+<td>Judicial</td>
+<td>Supreme Court (9 justices)</td>
+<td>Nominated by the president, confirmed by the Senate, serve for life</td>
+</tr>
+</tbody>
+</table>
+<p><em>TODO: examples of checks and balances, e.g.&nbsp;veto, impeachment, judicial review.</em></p>
+</section>
+<section id="federalism-the-role-of-the-states" class="level2">
+<h2 class="anchored" data-anchor-id="federalism-the-role-of-the-states">Federalism: the role of the states</h2>
+<p><em>TODO: what the 50 states decide themselves versus the federal government.</em></p>
+</section>
+<section id="elections-and-the-electoral-college" class="level2">
+<h2 class="anchored" data-anchor-id="elections-and-the-electoral-college">Elections and the Electoral College</h2>
+<p>The president is not chosen by the national popular vote but by 538 electors, and 270 are needed to win.<sup>1</sup></p>
+<p><em>TODO: how this shapes campaigns and “swing states”.</em></p>
+</section>
+<section id="why-two-parties" class="level2">
+<h2 class="anchored" data-anchor-id="why-two-parties">Why two parties?</h2>
+<p><em>TODO: first-past-the-post voting and its effects.</em></p>
+</section>
+<section id="compared-with-norway" class="level2">
+<h2 class="anchored" data-anchor-id="compared-with-norway">Compared with Norway</h2>
+<p><em>TODO: your comparison. Some starting points:</em></p>
+<ul>
+<li>Norway is a parliamentary system: the prime minister needs the support of the Storting (169 seats).</li>
+<li>Seats are shared by proportional representation, so many parties are in parliament.</li>
+<li>The Storting cannot be dissolved early, so elections are every four years.</li>
+</ul>
+</section>
+<section id="my-take" class="level2">
+<h2 class="anchored" data-anchor-id="my-take">My take</h2>
+<p><em>TODO</em></p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Most states give all their electors to the candidate who wins the state’s popular vote.↩︎</p></li>
+</ol>
+</section></div> ]]></description>
+  <category>politics</category>
+  <category>usa</category>
+  <guid>https://ktruongme.github.io/posts/2026-10-09-us-political-system/</guid>
+  <pubDate>Fri, 09 Oct 2026 00:00:00 GMT</pubDate>
+</item>
+<item>
   <title>Welcome To My Blog</title>
   <dc:creator>Tristan O&#39;Malley</dc:creator>
   <link>https://ktruongme.github.io/posts/welcome/</link>
