@@ -7,27 +7,6 @@
     "text": "TODO: replace this with a few lines about yourself, and swap profile.jpg for your own photo.\nThis blog is where I think out loud. I write about:\n\nMachine learning: how algorithms work, and notes on papers I read.\nSociety and politics: essays on things I keep thinking about.\nNorway and Vietnam: cultural differences I notice in everyday life."
   },
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
-    "section": "",
-    "text": "This is a post with executable code."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "myblog",
-    "section": "",
-    "text": "A notebook · Est. 2026\n  Thinking out loud about machines, society, and life between two cultures.\n  Notes on machine learning and papers I read, essays on politics and society, and what I notice living in Norway with Vietnamese roots.\n\n\n\n\n\n\n\n\n  \n    Oct 9, 2026\n    ·1 min read\n  \n  Post With Code\n  \n\n\n\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n  \n    Oct 9, 2026\n    ·2 min read\n  \n  How the US Political System Works\n  Notes from someone used to a parliamentary system\n\n\n\n\n\n\npolitics\n\nusa\n\n\n\n\n\n  \n    Oct 6, 2026\n    ·1 min read\n  \n  Welcome To My Blog\n  \n\n\n\n\n\n\nnews\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
-  },
-  {
     "objectID": "posts/2026-10-09-us-political-system/index.html",
     "href": "posts/2026-10-09-us-political-system/index.html",
     "title": "How the US Political System Works",
@@ -89,5 +68,54 @@
     "title": "How the US Political System Works",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nMost states give all their electors to the candidate who wins the state’s popular vote.↩︎"
+  },
+  {
+    "objectID": "posts/2026-10-09-data-modelling-star-schema/index.html",
+    "href": "posts/2026-10-09-data-modelling-star-schema/index.html",
+    "title": "Star Schemas: Facts and Dimensions",
+    "section": "",
+    "text": "Part 2 of 2 · Data modelling\n  \nPost With Code\nStar Schemas: Facts and Dimensions"
+  },
+  {
+    "objectID": "posts/2026-10-09-data-modelling-star-schema/index.html#the-idea",
+    "href": "posts/2026-10-09-data-modelling-star-schema/index.html#the-idea",
+    "title": "Star Schemas: Facts and Dimensions",
+    "section": "The idea",
+    "text": "The idea\nA star schema puts one big fact table (events you measure, like sales) in the middle, surrounded by small dimension tables (who, what, where, when).\n\n\n\n\n\n\n\nTable\nExample columns\n\n\n\n\nfact_sales\ndate_id, product_id, store_id, quantity, revenue\n\n\ndim_product\nproduct_id, name, category, brand\n\n\ndim_store\nstore_id, city, country\n\n\ndim_date\ndate_id, day, month, year, is_holiday"
+  },
+  {
+    "objectID": "posts/2026-10-09-data-modelling-star-schema/index.html#a-query",
+    "href": "posts/2026-10-09-data-modelling-star-schema/index.html#a-query",
+    "title": "Star Schemas: Facts and Dimensions",
+    "section": "A query",
+    "text": "A query\nSELECT d.year, p.category, SUM(f.revenue) AS revenue\nFROM fact_sales f\nJOIN dim_date d    ON f.date_id = d.date_id\nJOIN dim_product p ON f.product_id = p.product_id\nGROUP BY d.year, p.category;\nTODO: trade-offs versus a normalized (3NF) model."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "myblog",
+    "section": "",
+    "text": "A notebook · Est. 2026\n  Thinking out loud about machines, society, and life between two cultures.\n  Notes on machine learning and papers I read, essays on politics and society, and what I notice living in Norway with Vietnamese roots.\n\n\n\n\n\n\n\n\n  \n    Part 2·\n    Oct 9, 2026\n    ·1 min read\n  \n  Star Schemas: Facts and Dimensions\n  Why analysts love a boring table layout\n\n\n\n\n\n\ndata-modelling\n\n\n\n\n\n  \n    Part 1·\n    Oct 9, 2026\n    ·1 min read\n  \n  Post With Code\n  \n\n\n\n\n\n\ndata-modelling\n\ncode\n\n\n\n\n\n  \n    \n    Oct 9, 2026\n    ·2 min read\n  \n  How the US Political System Works\n  Notes from someone used to a parliamentary system\n\n\n\n\n\n\npolitics\n\nusa\n\n\n\n\n\n  \n    \n    Oct 6, 2026\n    ·1 min read\n  \n  Welcome To My Blog\n  \n\n\n\n\n\n\nnews\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "Part 1 of 2 · Data modelling\n  \nPost With Code\nStar Schemas: Facts and Dimensions\n  \n\nThis is a post with executable code."
+  },
+  {
+    "objectID": "series/data-modelling.html",
+    "href": "series/data-modelling.html",
+    "title": "Data modelling",
+    "section": "",
+    "text": "TODO: a short intro to the series: who it’s for, and what you’ll cover.\n\n\n\n\n\n\n\n  \n    Part 1·\n    Oct 9, 2026\n    ·1 min read\n  \n  Post With Code\n  \n\n\n\n\n\n\ndata-modelling\n\ncode\n\n\n\n\n\n  \n    Part 2·\n    Oct 9, 2026\n    ·1 min read\n  \n  Star Schemas: Facts and Dimensions\n  Why analysts love a boring table layout\n\n\n\n\n\n\ndata-modelling\n\n\n\nNo matching items"
   }
 ]

@@ -2,9 +2,17 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/2026-10-09-data-modelling-star-schema/index.html",
       "/posts/post-with-code/index.html",
       "/posts/2026-10-09-us-political-system/index.html",
       "/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/series/data-modelling.html",
+    "items": [
+      "/posts/post-with-code/index.html",
+      "/posts/2026-10-09-data-modelling-star-schema/index.html"
     ]
   }
 ]

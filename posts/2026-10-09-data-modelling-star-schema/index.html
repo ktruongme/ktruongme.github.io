@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Harlow Malloc">
 <meta name="dcterms.date" content="2026-10-09">
 
-<title>Post With Code – myblog</title>
+<title>Star Schemas: Facts and Dimensions – myblog</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -27,6 +26,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -309,8 +343,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-idea" id="toc-the-idea" class="nav-link active" data-scroll-target="#the-idea">The idea</a></li>
+  <li><a href="#a-query" id="toc-a-query" class="nav-link" data-scroll-target="#a-query">A query</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -318,10 +359,10 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Post With Code</h1>
+<h1 class="title">Star Schemas: Facts and Dimensions</h1>
+<p class="subtitle lead">Why analysts love a boring table layout</p>
   <div class="quarto-categories">
     <div class="quarto-category">data-modelling</div>
-    <div class="quarto-category">code</div>
   </div>
   </div>
 
@@ -329,12 +370,6 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Harlow Malloc </p>
-          </div>
-  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
@@ -352,15 +387,70 @@ ul.task-list li input[type="checkbox"] {
 
 
 <div class="series-box">
-  <div class="series-label">Part 1 of 2 · <a href="../../series/data-modelling.html">Data modelling</a></div>
+  <div class="series-label">Part 2 of 2 · <a href="../../series/data-modelling.html">Data modelling</a></div>
   <ol class="series-list">
-<li class="current"><span>Post With Code</span></li>
-<li><a href="../2026-10-09-data-modelling-star-schema/">Star Schemas: Facts and Dimensions</a></li>
+<li><a href="../post-with-code/">Post With Code</a></li>
+<li class="current"><span>Star Schemas: Facts and Dimensions</span></li>
   </ol>
 </div>
-<p>This is a post with executable code.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Dummy post
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is a placeholder article to show how a series looks. Replace or delete it.</p>
+</div>
+</div>
+<section id="the-idea" class="level2">
+<h2 class="anchored" data-anchor-id="the-idea">The idea</h2>
+<p>A <strong>star schema</strong> puts one big <em>fact</em> table (events you measure, like sales) in the middle, surrounded by small <em>dimension</em> tables (who, what, where, when).</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Table</th>
+<th>Example columns</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>fact_sales</code></td>
+<td><code>date_id</code>, <code>product_id</code>, <code>store_id</code>, <code>quantity</code>, <code>revenue</code></td>
+</tr>
+<tr class="even">
+<td><code>dim_product</code></td>
+<td><code>product_id</code>, <code>name</code>, <code>category</code>, <code>brand</code></td>
+</tr>
+<tr class="odd">
+<td><code>dim_store</code></td>
+<td><code>store_id</code>, <code>city</code>, <code>country</code></td>
+</tr>
+<tr class="even">
+<td><code>dim_date</code></td>
+<td><code>date_id</code>, <code>day</code>, <code>month</code>, <code>year</code>, <code>is_holiday</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="a-query" class="level2">
+<h2 class="anchored" data-anchor-id="a-query">A query</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> d.<span class="dt">year</span>, p.<span class="kw">category</span>, <span class="fu">SUM</span>(f.revenue) <span class="kw">AS</span> revenue</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> fact_sales f</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> dim_date d    <span class="kw">ON</span> f.date_id <span class="op">=</span> d.date_id</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> dim_product p <span class="kw">ON</span> f.product_id <span class="op">=</span> p.product_id</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> d.<span class="dt">year</span>, p.<span class="kw">category</span>;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><em>TODO: trade-offs versus a normalized (3NF) model.</em></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

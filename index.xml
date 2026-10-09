@@ -12,6 +12,129 @@
 <generator>quarto-1.10.19</generator>
 <lastBuildDate>Fri, 09 Oct 2026 00:00:00 GMT</lastBuildDate>
 <item>
+  <title>Star Schemas: Facts and Dimensions</title>
+  <link>https://ktruongme.github.io/posts/2026-10-09-data-modelling-star-schema/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<div class="series-box">
+  <div class="series-label">Part 2 of 2 · <a href="../../series/data-modelling.html">Data modelling</a></div>
+  <ol class="series-list">
+<li><a href="../post-with-code/">Post With Code</a></li>
+<li class="current"><span>Star Schemas: Facts and Dimensions</span></li>
+  </ol>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Dummy post
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is a placeholder article to show how a series looks. Replace or delete it.</p>
+</div>
+</div>
+<section id="the-idea" class="level2">
+<h2 class="anchored" data-anchor-id="the-idea">The idea</h2>
+<p>A <strong>star schema</strong> puts one big <em>fact</em> table (events you measure, like sales) in the middle, surrounded by small <em>dimension</em> tables (who, what, where, when).</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Table</th>
+<th>Example columns</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>fact_sales</code></td>
+<td><code>date_id</code>, <code>product_id</code>, <code>store_id</code>, <code>quantity</code>, <code>revenue</code></td>
+</tr>
+<tr class="even">
+<td><code>dim_product</code></td>
+<td><code>product_id</code>, <code>name</code>, <code>category</code>, <code>brand</code></td>
+</tr>
+<tr class="odd">
+<td><code>dim_store</code></td>
+<td><code>store_id</code>, <code>city</code>, <code>country</code></td>
+</tr>
+<tr class="even">
+<td><code>dim_date</code></td>
+<td><code>date_id</code>, <code>day</code>, <code>month</code>, <code>year</code>, <code>is_holiday</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="a-query" class="level2">
+<h2 class="anchored" data-anchor-id="a-query">A query</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">SELECT</span> d.<span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">year</span>, p.<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">category</span>, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">SUM</span>(f.revenue) <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">AS</span> revenue</span>
+<span id="cb1-2"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">FROM</span> fact_sales f</span>
+<span id="cb1-3"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">JOIN</span> dim_date d    <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">ON</span> f.date_id <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> d.date_id</span>
+<span id="cb1-4"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">JOIN</span> dim_product p <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">ON</span> f.product_id <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> p.product_id</span>
+<span id="cb1-5"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">GROUP</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">BY</span> d.<span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">year</span>, p.<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">category</span>;</span></code></pre></div></div>
+<p><em>TODO: trade-offs versus a normalized (3NF) model.</em></p>
+
+
+</section>
+
+ ]]></description>
+  <category>data-modelling</category>
+  <guid>https://ktruongme.github.io/posts/2026-10-09-data-modelling-star-schema/</guid>
+  <pubDate>Fri, 09 Oct 2026 00:00:00 GMT</pubDate>
+</item>
+<item>
   <title>Post With Code</title>
   <dc:creator>Harlow Malloc</dc:creator>
   <link>https://ktruongme.github.io/posts/post-with-code/</link>
@@ -21,14 +144,20 @@
 
 
 
+<div class="series-box">
+  <div class="series-label">Part 1 of 2 · <a href="../../series/data-modelling.html">Data modelling</a></div>
+  <ol class="series-list">
+<li class="current"><span>Post With Code</span></li>
+<li><a href="../2026-10-09-data-modelling-star-schema/">Star Schemas: Facts and Dimensions</a></li>
+  </ol>
+</div>
 <p>This is a post with executable code.</p>
 
 
 
  ]]></description>
-  <category>news</category>
+  <category>data-modelling</category>
   <category>code</category>
-  <category>analysis</category>
   <guid>https://ktruongme.github.io/posts/post-with-code/</guid>
   <pubDate>Fri, 09 Oct 2026 00:00:00 GMT</pubDate>
   <media:content url="https://ktruongme.github.io/posts/post-with-code/image.jpg" medium="image" type="image/jpeg"/>
