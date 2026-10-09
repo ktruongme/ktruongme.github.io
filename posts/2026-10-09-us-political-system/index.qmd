@@ -3,7 +3,6 @@ title: "How the US Political System Works"
 subtitle: "Notes from someone used to a parliamentary system"
 date: 2026-10-09
 categories: [politics, usa]
-draft: true          # remove this line when the post is ready to publish
 ---
 
 ::: {.callout-note}
