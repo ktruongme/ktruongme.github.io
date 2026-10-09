@@ -5,6 +5,8 @@ listing:
   feed: true
   sort: "date desc"
   type: default
+  fields: [date, title, subtitle, description, categories, reading-time]
+  date-format: "MMM D, YYYY"
   categories: true
   sort-ui: false
   filter-ui: false
