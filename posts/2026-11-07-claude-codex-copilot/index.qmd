@@ -1,0 +1,88 @@
+---
+title: "AI Coding Agents in Practice: Claude Code, Copilot and Codex"
+description: "Which AI coding agents developers use most, what Anthropic, GitHub and OpenAI offer, what 'agent' really means, and how to run one: in VS Code, in the terminal, or on a remote server."
+date: 2026-11-07
+categories: [ai, workflow, coding, tools]
+series: "AI in my workflow"
+series-part: 3
+tldr:
+  - "Use **VS Code** with the agent's extension. Its chat runs the same agent as the terminal."
+  - "Long tasks on a remote server: `claude`, `copilot` or `codex` in `tmux`, or Copilot's chat with **Session Target: Copilot**."
+  - "Several tasks: one session each, in separate git worktrees."
+---
+
+## Who leads
+
+| Tool | Used in the past year |
+|------------------------|----------------------:|
+| **Claude Code** | 65.5% |
+| **GitHub Copilot** | 58.7% |
+| **OpenAI Codex** | 29.5% |
+| Cursor | 25.5% |
+| Google Antigravity | 16.0% |
+| Gemini Code Assist | 14.6% |
+| Open Code | 13.6% |
+| JetBrains AI | 12.8% |
+
+: The eight most used tools in the [Stack Overflow Developer Survey 2026](https://survey.stackoverflow.co/2026/ai/data/ai-code-agent), published in October 2026. The question: "Have you used any of the following coding agents or assistants in the past year?" 12,255 developers answered. Many use more than one tool, so the numbers add up to more than 100%.
+
+## What each company offers
+
+|   | Anthropic | GitHub (Microsoft) | OpenAI |
+|-----------------|-------------------|-------------------|-------------------|
+| **Coding brand** | Claude Code | GitHub Copilot | Codex |
+| **Web chat** | [claude.ai](https://claude.ai) | [github.com/copilot](https://github.com/copilot) | [chatgpt.com](https://chatgpt.com) |
+| **Desktop app** | Claude | GitHub Copilot | ChatGPT |
+| **VS Code** | Claude Code for VS Code | GitHub Copilot Chat | Codex – OpenAI's coding agent |
+| **Terminal** | `claude` | `copilot` | `codex` |
+| **Cloud agent** | Claude Code in the cloud | Copilot cloud agent | Codex Cloud |
+| **AI models** | Claude | Claude, GPT, Gemini and others | GPT |
+
+: The products in November 2026, as named by each company. In VS Code, Claude Code and Codex are extensions you install from the Marketplace, while GitHub Copilot Chat comes built in. All three desktop apps run on Windows, macOS and Linux (Claude on Linux is in beta).
+
+## Which editor developers use
+
+| Editor | Used regularly |
+|------------------------|---------------:|
+| **Visual Studio Code** | 70.9% |
+| Notepad++ | 27.8% |
+| Visual Studio | 27.6% |
+| Vim | 27.2% |
+| IntelliJ IDEA | 24.3% |
+| Cursor | 14.9% |
+| Neovim | 14.7% |
+| Android Studio | 14.2% |
+
+: The eight most used editors in the [Stack Overflow Developer Survey 2026](https://survey.stackoverflow.co/2026/technology/data/dev-ide). The question: "Which development environments and code editors did you use regularly over the past year?" 13,193 developers answered. Many use more than one editor, so the numbers add up to more than 100%.
+
+## What "agent" means in practice
+
+An agent is an AI that works on a task by itself, step by step. It reads files, edits code and runs commands, checks the result, and continues. In daily talk, "an agent" points to one of three concrete things:
+
+| | What it is | What people say | Examples |
+|----------------|------------------------------------|------------------------------|------------------------------------|
+| **Session** | One running agent: a conversation in which the AI works on one task. You start it, a schedule starts it, or another session starts it (then it is called a subagent) | "I use an agent for coding", "I run four agents at once", "My agents do this every morning", "It started three subagents" | A chat in the VS Code Chat view, a terminal window running `claude`, `copilot` or `codex`, a session in the desktop app. Started by a schedule: Copilot automations, Claude Code scheduled tasks, ChatGPT scheduled tasks |
+| **Custom agent** | A text file with a name, instructions and the tools the AI may use. Nothing runs. Sessions and subagents start from it | "I created my first agent" | `.github/agents/reviewer.agent.md` in VS Code, `.claude/agents/reviewer.md` in Claude Code |
+| **Program** | Your own code that calls a model with tools in a loop. Claude Code and Copilot are programs like this | "I built my first agent" | Claude Agent SDK, GitHub Copilot SDK, OpenAI Agents SDK, LangChain |
+
+: From the official docs: [VS Code sessions](https://code.visualstudio.com/docs/agents/concepts/sessions), [Claude Code subagents](https://code.claude.com/docs/en/sub-agents), [Copilot automations](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent/create-automations), [Claude Code scheduled tasks](https://code.claude.com/docs/en/routines), [ChatGPT scheduled tasks](https://developers.openai.com/codex/app/automations), [VS Code custom agents](https://code.visualstudio.com/docs/agent-customization/custom-agents), [Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/overview) ("the same tools, agent loop, and context management that power Claude Code"), [GitHub Copilot SDK](https://github.blog/changelog/2026-06-02-copilot-sdk-is-now-generally-available/) ("the same agent runtime behind GitHub Copilot").
+
+Most of the time, "an agent" means a session. Where it runs does not matter. A chat in VS Code and a window in the terminal are both agents if the AI may edit files and run commands by itself. If it can only answer, it is a chat.
+
+## Terminal or VS Code?
+
+A session can run in a terminal window or in the VS Code extension. No survey counts how many people use each. What exists are descriptions from experienced engineers and from the companies themselves:
+
+| Who | Setup | Source |
+|------------------------------|----------------------------------------|------------------|
+| About 900 engineers in a 2026 survey | "A terminal with Claude Code open to drive work, and an IDE also open to review changes made by the agent." Described as a common setup | [Pragmatic Engineer](https://newsletter.pragmaticengineer.com/p/ai-tooling-2026), Mar 2026 |
+| Boris Cherny, creator of Claude Code (Anthropic) | Five Claude sessions in numbered terminal tabs, plus five to ten more in the browser at claude.ai/code | [Write-up of his post on X](https://www.educative.io/newsletter/artificial-intelligence/claude-code-creators-workflow), Jan 2026 |
+| Thibault Sottiaux, engineering lead of Codex (OpenAI) | Calls the IDE extension Codex's "most successful surface" and recommends it to new users as "the lowest friction option" | [Cerebral Valley interview](https://cerebralvalley.beehiiv.com/p/openai-s-codex-lets-one-engineer-ship-like-a-team-of-ten), Jan 2026 |
+
+: These are descriptions, not measurements.
+
+In practice:
+
+- **For one task:** run the agent in a terminal and review its changes in the editor. VS Code's built-in terminal puts both in one window. The extension works just as well: it is the same agent.
+- **For long tasks on a remote server:** run `claude`, `copilot` or `codex` inside `tmux`, a program that keeps terminal sessions running on the server. With Copilot, VS Code's chat also works: start a new chat and set **Session Target** to **Copilot**, and it [keeps working](https://code.visualstudio.com/docs/agents/concepts/agent-host) when the connection drops.
+- **For several tasks at once:** run several sessions, for example one per terminal tab or one per new chat. Give each session its own copy of the code (a git worktree), so they don't change the same files. VS Code's [Agents window](https://code.visualstudio.com/docs/agents/run/agents-window) can set this up for you.
