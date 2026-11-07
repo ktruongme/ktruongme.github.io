@@ -6,6 +6,10 @@ date: 2026-11-07
 categories: [ai, workflow, tools]
 series: "AI in my workflow"
 series-part: 1
+tldr:
+  - "**Handy** is a free, offline dictation app. It types into any app on Windows, macOS and Linux."
+  - "With **Whisper large-v3-turbo** on a laptop NVIDIA GPU, each phrase takes about one second."
+  - "**Wispr Flow** gives more polished text, but its free plan allows only about 2,000 words a week."
 ---
 
 ## The problem

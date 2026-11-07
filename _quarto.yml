@@ -11,8 +11,6 @@ website:
         menu:
           - text: AI in my workflow
             href: series/ai-in-my-workflow.qmd
-          - text: Data modelling
-            href: series/data-modelling.qmd
       - about.qmd
       - icon: github
         href: https://github.com/ktruongme
@@ -35,6 +33,7 @@ format:
     link-external-newwindow: true
     respect-user-color-scheme: true
     filters:
+      - filters/tldr.lua
       - filters/series.lua
 
 
