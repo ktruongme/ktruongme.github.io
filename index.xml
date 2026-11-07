@@ -371,12 +371,12 @@
 <table class="caption-top table">
 <caption>Size in billions of parameters. Parakeet scores best on English benchmarks, but test both Whisper and Parakeet on your own voice.</caption>
 <colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
 <col style="width: 20%">
-<col style="width: 10%">
-<col style="width: 8%">
-<col style="width: 12%">
-<col style="width: 20%">
-<col style="width: 30%">
 </colgroup>
 <thead>
 <tr class="header">
