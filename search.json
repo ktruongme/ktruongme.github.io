@@ -7,6 +7,13 @@
     "text": "TODO: replace this with a few lines about yourself, and swap profile.jpg for your own photo.\nThis blog is where I think out loud. I write about:\n\nMachine learning: how algorithms work, and notes on papers I read.\nSociety and politics: essays on things I keep thinking about.\nNorway and Vietnam: cultural differences I notice in everyday life."
   },
   {
+    "objectID": "series/ai-in-my-workflow.html",
+    "href": "series/ai-in-my-workflow.html",
+    "title": "AI in my workflow",
+    "section": "",
+    "text": "Short, practical notes on the AI tools in my daily work, one piece at a time. It starts with dictation, because that’s how I talk to most of the others.\n\n\n\n\n\n\n\n  \n    Part 1·\n    Nov 7, 2026\n    ·5 min read\n  \n  Free Local Dictation That Works Everywhere\n  Handy, Whisper and a laptop GPU, with no subscription\n\n\nA speech-to-text setup that runs offline, costs nothing and types into any app.\n\n\n\nai\n\nworkflow\n\ntools\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "posts/2026-10-09-us-political-system/index.html",
     "href": "posts/2026-10-09-us-political-system/index.html",
     "title": "How the US Political System Works",
@@ -70,6 +77,20 @@
     "text": "Footnotes\n\n\nMost states give all their electors to the candidate who wins the state’s popular vote.↩︎"
   },
   {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "Part 1 of 2 · Data modelling\n  \nPost With Code\nStar Schemas: Facts and Dimensions\n  \n\nThis is a post with executable code."
+  },
+  {
     "objectID": "posts/2026-10-09-data-modelling-star-schema/index.html",
     "href": "posts/2026-10-09-data-modelling-star-schema/index.html",
     "title": "Star Schemas: Facts and Dimensions",
@@ -91,25 +112,46 @@
     "text": "A query\nSELECT d.year, p.category, SUM(f.revenue) AS revenue\nFROM fact_sales f\nJOIN dim_date d    ON f.date_id = d.date_id\nJOIN dim_product p ON f.product_id = p.product_id\nGROUP BY d.year, p.category;\nTODO: trade-offs versus a normalized (3NF) model."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "myblog",
+    "objectID": "posts/2026-11-07-local-dictation/index.html",
+    "href": "posts/2026-11-07-local-dictation/index.html",
+    "title": "Free Local Dictation That Works Everywhere",
     "section": "",
-    "text": "A notebook · Est. 2026\n  Thinking out loud about machines, society, and life between two cultures.\n  Notes on machine learning and papers I read, essays on politics and society, and what I notice living in Norway with Vietnamese roots.\n\n\n\n\n\n\n\n\n  \n    Part 2·\n    Oct 9, 2026\n    ·1 min read\n  \n  Star Schemas: Facts and Dimensions\n  Why analysts love a boring table layout\n\n\n\n\n\n\ndata-modelling\n\n\n\n\n\n  \n    Part 1·\n    Oct 9, 2026\n    ·1 min read\n  \n  Post With Code\n  \n\n\n\n\n\n\ndata-modelling\n\ncode\n\n\n\n\n\n  \n    \n    Oct 9, 2026\n    ·2 min read\n  \n  How the US Political System Works\n  Notes from someone used to a parliamentary system\n\n\n\n\n\n\npolitics\n\nusa\n\n\n\n\n\n  \n    \n    Oct 6, 2026\n    ·1 min read\n  \n  Welcome To My Blog\n  \n\n\n\n\n\n\nnews\n\n\n\nNo matching items"
+    "text": "Part 1 of 1 · AI in my workflow\n  \nFree Local Dictation That Works Everywhere"
   },
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "objectID": "posts/2026-11-07-local-dictation/index.html#the-problem",
+    "href": "posts/2026-11-07-local-dictation/index.html#the-problem",
+    "title": "Free Local Dictation That Works Everywhere",
+    "section": "The problem",
+    "text": "The problem\nWorking with AI tools means a lot of typing: in chat apps, coding assistants, the browser and the terminal. For long prompts, speaking is faster than typing. The dictation in Claude and ChatGPT is very good, but it only works inside those apps, and not always there either. For example, it doesn’t work in the Claude Code extension for VS Code when VS Code is connected to a remote machine over SSH.\nThe other options on Windows are weaker:\n\nWindows voice typing (Win + H) works in every app, but it makes many more mistakes than the dictation in the chat apps.\nThe GitHub Copilot app (hold Ctrl + Space) uses a small model, NVIDIA’s nemotron-speech-streaming-en-0.6b. It runs on the CPU, and you can’t change the model.\n\nThe goal is one dictation tool for the whole computer that types into whatever window is active. It should also be free, with no subscription and no word limit.\nSuch a tool has two parts. The model turns speech into text: Whisper (from OpenAI) is the most widely used, and Parakeet (from NVIDIA) is its main competitor. The app handles the shortcut key, records your voice and pastes the text."
   },
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
-    "section": "",
-    "text": "Part 1 of 2 · Data modelling\n  \nPost With Code\nStar Schemas: Facts and Dimensions\n  \n\nThis is a post with executable code."
+    "objectID": "posts/2026-11-07-local-dictation/index.html#handy-free-offline-open-source",
+    "href": "posts/2026-11-07-local-dictation/index.html#handy-free-offline-open-source",
+    "title": "Free Local Dictation That Works Everywhere",
+    "section": "Handy: free, offline, open source",
+    "text": "Handy: free, offline, open source\nHandy is a free, open-source app (MIT license) for Windows, macOS and Linux. You hold a shortcut key, speak, and release it. Handy then pastes the text where the cursor is. Everything runs on your own computer, and you choose the model.\nAmong the free, open-source apps for Windows, Handy is by far the most popular:\n\nStar counts on 7 November 2026. Stars only give a rough idea of popularity.\n\n\nApp\nGitHub stars\nLicense\nFirst release\n\n\n\n\nHandy\n37,865\nMIT\nJun 2025\n\n\nOpenWhispr\n10,910\nMIT\nJul 2025\n\n\nCapsWriter-Offline\n7,083\nMIT\nMay 2023\n\n\nWhispering (Epicenter)\n4,840\nunclear\nMar 20231\n\n\nAmical\n1,599\nMIT\nJul 2025\n\n\n\nThe best-known dictation app, Wispr Flow, runs in the cloud and is not fully free. Its results often feel better than plain Whisper or Parakeet because it also cleans up the text with AI, but the free plan allows only about 2,000 words a week (after that it slows down, with a hard limit at 5,000 words).2 Since both apps work the same way, one option is to use Wispr Flow until the limit, then switch to Handy.\nSetup takes a few minutes:\n\nInstall Handy from a terminal with winget install cjpais.Handy, or download it from handy.computer.\nIn the settings, download a model: Whisper large-v3-turbo if the computer has a GPU, or Parakeet V3 if it only has a CPU.\nChoose a shortcut key that other apps don’t already use. For example, Copilot uses Ctrl + Space."
+  },
+  {
+    "objectID": "posts/2026-11-07-local-dictation/index.html#does-handy-really-use-the-gpu",
+    "href": "posts/2026-11-07-local-dictation/index.html#does-handy-really-use-the-gpu",
+    "title": "Free Local Dictation That Works Everywhere",
+    "section": "Does Handy really use the GPU?",
+    "text": "Does Handy really use the GPU?\nThe test machine is a laptop with two GPUs: a built-in Intel GPU and an NVIDIA RTX PRO 500 (6 GB memory, 40 W). handy.exe shows up in nvidia-smi, but that only means the app draws its window on the GPU. To check if the model itself runs on the GPU, measure the GPU once per second while dictating:\n1..75 | % { nvidia-smi --query-gpu=utilization.gpu,memory.used --format=csv,noheader; Start-Sleep 1 }\nThe results show a clear pattern:\n\nWhile speaking: the GPU is at 0% and uses 0 MiB of memory. Handy only records.\nAfter releasing the key: the GPU works at 91% for about 1 second, and memory goes from 0 to about 1 GB. This is the model loading and transcribing.\nA little later: the memory is free again, because Handy unloads the model when it isn’t in use.\n\nWhat this means:\n\n“Speed” is the waiting time after you stop talking. Whisper-type models transcribe the whole recording in one go. On this GPU the wait is about one second, which feels instant.\nModel size decides the memory use, not the length of the recording. Speaking longer takes more time, not more memory.\nBigger models fit in memory, but they are slower. Handy rates Mistral’s Voxtral Mini 3B better for English. It is about three times bigger, so each phrase could take around 3–4 seconds on this GPU. This is an estimate and hasn’t been measured yet."
+  },
+  {
+    "objectID": "posts/2026-11-07-local-dictation/index.html#recommended-setup",
+    "href": "posts/2026-11-07-local-dictation/index.html#recommended-setup",
+    "title": "Free Local Dictation That Works Everywhere",
+    "section": "Recommended setup",
+    "text": "Recommended setup\nHandy with Whisper large-v3-turbo on an NVIDIA GPU: free, offline, no word limit, about one second per phrase, and it works in every app. The text is less polished than Wispr Flow’s, but for prompts to an AI it is good enough."
+  },
+  {
+    "objectID": "posts/2026-11-07-local-dictation/index.html#footnotes",
+    "href": "posts/2026-11-07-local-dictation/index.html#footnotes",
+    "title": "Free Local Dictation That Works Everywhere",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThis date is for the whole Epicenter repository, which contains more than Whispering. Whispering itself was launched on Hacker News in August 2025.↩︎\nFrom Wispr Flow’s documentation in November 2026. The limits can change at any time.↩︎"
   },
   {
     "objectID": "series/data-modelling.html",
@@ -117,5 +159,12 @@
     "title": "Data modelling",
     "section": "",
     "text": "TODO: a short intro to the series: who it’s for, and what you’ll cover.\n\n\n\n\n\n\n\n  \n    Part 1·\n    Oct 9, 2026\n    ·1 min read\n  \n  Post With Code\n  \n\n\n\n\n\n\ndata-modelling\n\ncode\n\n\n\n\n\n  \n    Part 2·\n    Oct 9, 2026\n    ·1 min read\n  \n  Star Schemas: Facts and Dimensions\n  Why analysts love a boring table layout\n\n\n\n\n\n\ndata-modelling\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "myblog",
+    "section": "",
+    "text": "A notebook · Est. 2026\n  Thinking out loud about machines, society, and life between two cultures.\n  Notes on machine learning and papers I read, essays on politics and society, and what I notice living in Norway with Vietnamese roots.\n\n\n\n\n\n\n\n\n  \n    Part 1·\n    Nov 7, 2026\n    ·5 min read\n  \n  Free Local Dictation That Works Everywhere\n  Handy, Whisper and a laptop GPU, with no subscription\n\n\nA speech-to-text setup that runs offline, costs nothing and types into any app.\n\n\n\nai\n\nworkflow\n\ntools\n\n\n\n\n\n  \n    Part 1·\n    Oct 9, 2026\n    ·1 min read\n  \n  Post With Code\n  \n\n\n\n\n\n\ndata-modelling\n\ncode\n\n\n\n\n\n  \n    Part 2·\n    Oct 9, 2026\n    ·1 min read\n  \n  Star Schemas: Facts and Dimensions\n  Why analysts love a boring table layout\n\n\n\n\n\n\ndata-modelling\n\n\n\n\n\n  \n    \n    Oct 9, 2026\n    ·2 min read\n  \n  How the US Political System Works\n  Notes from someone used to a parliamentary system\n\n\n\n\n\n\npolitics\n\nusa\n\n\n\n\n\n  \n    \n    Oct 6, 2026\n    ·1 min read\n  \n  Welcome To My Blog\n  \n\n\n\n\n\n\nnews\n\n\n\nNo matching items"
   }
 ]

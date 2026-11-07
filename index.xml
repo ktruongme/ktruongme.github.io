@@ -9,8 +9,195 @@
 <link>https://ktruongme.github.io/</link>
 <atom:link href="https://ktruongme.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description>A blog built with Quarto</description>
-<generator>quarto-1.10.19</generator>
-<lastBuildDate>Fri, 09 Oct 2026 00:00:00 GMT</lastBuildDate>
+<generator>quarto-1.11.9</generator>
+<lastBuildDate>Sat, 07 Nov 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Free Local Dictation That Works Everywhere</title>
+  <link>https://ktruongme.github.io/posts/2026-11-07-local-dictation/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<div class="series-box">
+  <div class="series-label">Part 1 of 1 · <a href="../../series/ai-in-my-workflow.html">AI in my workflow</a></div>
+  <ol class="series-list">
+<li class="current"><span>Free Local Dictation That Works Everywhere</span></li>
+  </ol>
+</div>
+<section id="the-problem" class="level2">
+<h2 class="anchored" data-anchor-id="the-problem">The problem</h2>
+<p>Working with AI tools means a lot of typing: in chat apps, coding assistants, the browser and the terminal. For long prompts, speaking is faster than typing. The dictation in Claude and ChatGPT is very good, but it only works inside those apps, and not always there either. For example, it doesn’t work in the Claude Code extension for VS Code when VS Code is connected to a remote machine over SSH.</p>
+<p>The other options on Windows are weaker:</p>
+<ul>
+<li><strong>Windows voice typing</strong> (<code>Win + H</code>) works in every app, but it makes many more mistakes than the dictation in the chat apps.</li>
+<li><strong>The GitHub Copilot app</strong> (hold <code>Ctrl + Space</code>) uses a small model, NVIDIA’s <code>nemotron-speech-streaming-en-0.6b</code>. It runs on the CPU, and you can’t change the model.</li>
+</ul>
+<p>The goal is <strong>one dictation tool for the whole computer</strong> that types into whatever window is active. It should also be <strong>free</strong>, with no subscription and no word limit.</p>
+<p>Such a tool has two parts. <strong>The model</strong> turns speech into text: <strong>Whisper</strong> (from OpenAI) is the most widely used, and <strong>Parakeet</strong> (from NVIDIA) is its main competitor. <strong>The app</strong> handles the shortcut key, records your voice and pastes the text.</p>
+</section>
+<section id="handy-free-offline-open-source" class="level2">
+<h2 class="anchored" data-anchor-id="handy-free-offline-open-source">Handy: free, offline, open source</h2>
+<p><a href="https://handy.computer">Handy</a> is a free, open-source app (MIT license) for Windows, macOS and Linux. You hold a shortcut key, speak, and release it. Handy then pastes the text where the cursor is. Everything runs on your own computer, and you choose the model.</p>
+<p>Among the free, open-source apps for Windows, Handy is by far the most popular:</p>
+<table class="caption-top table">
+<caption>Star counts on 7 November 2026. Stars only give a rough idea of popularity.</caption>
+<thead>
+<tr class="header">
+<th>App</th>
+<th style="text-align: right;">GitHub stars</th>
+<th>License</th>
+<th>First release</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Handy</strong></td>
+<td style="text-align: right;">37,865</td>
+<td>MIT</td>
+<td>Jun 2025</td>
+</tr>
+<tr class="even">
+<td>OpenWhispr</td>
+<td style="text-align: right;">10,910</td>
+<td>MIT</td>
+<td>Jul 2025</td>
+</tr>
+<tr class="odd">
+<td>CapsWriter-Offline</td>
+<td style="text-align: right;">7,083</td>
+<td>MIT</td>
+<td>May 2023</td>
+</tr>
+<tr class="even">
+<td>Whispering (Epicenter)</td>
+<td style="text-align: right;">4,840</td>
+<td>unclear</td>
+<td>Mar 2023<sup>1</sup></td>
+</tr>
+<tr class="odd">
+<td>Amical</td>
+<td style="text-align: right;">1,599</td>
+<td>MIT</td>
+<td>Jul 2025</td>
+</tr>
+</tbody>
+</table>
+<p>The best-known dictation app, <strong>Wispr Flow</strong>, runs in the cloud and is not fully free. Its results often feel better than plain Whisper or Parakeet because it also cleans up the text with AI, but the free plan allows only about <strong>2,000 words a week</strong> (after that it slows down, with a hard limit at 5,000 words).<sup>2</sup> Since both apps work the same way, one option is to use Wispr Flow until the limit, then switch to Handy.</p>
+<p>Setup takes a few minutes:</p>
+<ol type="1">
+<li>Install Handy from a terminal with <code>winget install cjpais.Handy</code>, or download it from <a href="https://handy.computer">handy.computer</a>.</li>
+<li>In the settings, download a model: <strong>Whisper large-v3-turbo</strong> if the computer has a GPU, or <strong>Parakeet V3</strong> if it only has a CPU.</li>
+<li>Choose a shortcut key that other apps don’t already use. For example, Copilot uses <code>Ctrl + Space</code>.</li>
+</ol>
+</section>
+<section id="does-handy-really-use-the-gpu" class="level2">
+<h2 class="anchored" data-anchor-id="does-handy-really-use-the-gpu">Does Handy really use the GPU?</h2>
+<p>The test machine is a laptop with two GPUs: a built-in Intel GPU and an <strong>NVIDIA RTX PRO 500</strong> (6 GB memory, 40 W). <code>handy.exe</code> shows up in <code>nvidia-smi</code>, but that only means the app draws its window on the GPU. To check if the model itself runs on the GPU, measure the GPU once per second while dictating:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">..</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">75</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span> nvidia-smi <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">--</span>query-gpu<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>utilization<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">gpu</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span>memory<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">used</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">--</span>format<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>csv<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span>noheader<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">Start-Sleep</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span></code></pre></div></div>
+<p>The results show a clear pattern:</p>
+<ul>
+<li><strong>While speaking:</strong> the GPU is at 0% and uses 0 MiB of memory. Handy only records.</li>
+<li><strong>After releasing the key:</strong> the GPU works at <strong>91% for about 1 second</strong>, and memory goes from 0 to about <strong>1 GB</strong>. This is the model loading and transcribing.</li>
+<li><strong>A little later:</strong> the memory is free again, because Handy unloads the model when it isn’t in use.</li>
+</ul>
+<p>What this means:</p>
+<ul>
+<li><strong>“Speed” is the waiting time after you stop talking.</strong> Whisper-type models transcribe the whole recording in one go. On this GPU the wait is about one second, which feels instant.</li>
+<li><strong>Model size decides the memory use, not the length of the recording.</strong> Speaking longer takes more time, not more memory.</li>
+<li><strong>Bigger models fit in memory, but they are slower.</strong> Handy rates Mistral’s Voxtral Mini 3B better for English. It is about three times bigger, so each phrase could take around 3–4 seconds on this GPU. This is an estimate and hasn’t been measured yet.</li>
+</ul>
+</section>
+<section id="recommended-setup" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-setup">Recommended setup</h2>
+<p>Handy with Whisper large-v3-turbo on an NVIDIA GPU: free, offline, no word limit, about one second per phrase, and it works in every app. The text is less polished than Wispr Flow’s, but for prompts to an AI it is good enough.</p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>This date is for the whole Epicenter repository, which contains more than Whispering. Whispering itself was launched on Hacker News in August 2025.↩︎</p></li>
+<li id="fn2"><p>From Wispr Flow’s documentation in November 2026. The limits can change at any time.↩︎</p></li>
+</ol>
+</section></div> ]]></description>
+  <category>ai</category>
+  <category>workflow</category>
+  <category>tools</category>
+  <guid>https://ktruongme.github.io/posts/2026-11-07-local-dictation/</guid>
+  <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Post With Code</title>
+  <dc:creator>Harlow Malloc</dc:creator>
+  <link>https://ktruongme.github.io/posts/post-with-code/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<div class="series-box">
+  <div class="series-label">Part 1 of 2 · <a href="../../series/data-modelling.html">Data modelling</a></div>
+  <ol class="series-list">
+<li class="current"><span>Post With Code</span></li>
+<li><a href="../2026-10-09-data-modelling-star-schema/">Star Schemas: Facts and Dimensions</a></li>
+  </ol>
+</div>
+<p>This is a post with executable code.</p>
+
+
+
+ ]]></description>
+  <category>data-modelling</category>
+  <category>code</category>
+  <guid>https://ktruongme.github.io/posts/post-with-code/</guid>
+  <pubDate>Fri, 09 Oct 2026 00:00:00 GMT</pubDate>
+  <media:content url="https://ktruongme.github.io/posts/post-with-code/image.jpg" medium="image" type="image/jpeg" height="96" width="144"/>
+</item>
 <item>
   <title>Star Schemas: Facts and Dimensions</title>
   <link>https://ktruongme.github.io/posts/2026-10-09-data-modelling-star-schema/</link>
@@ -133,34 +320,6 @@ font-style: inherit;">category</span>;</span></code></pre></div></div>
   <category>data-modelling</category>
   <guid>https://ktruongme.github.io/posts/2026-10-09-data-modelling-star-schema/</guid>
   <pubDate>Fri, 09 Oct 2026 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Post With Code</title>
-  <dc:creator>Harlow Malloc</dc:creator>
-  <link>https://ktruongme.github.io/posts/post-with-code/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<div class="series-box">
-  <div class="series-label">Part 1 of 2 · <a href="../../series/data-modelling.html">Data modelling</a></div>
-  <ol class="series-list">
-<li class="current"><span>Post With Code</span></li>
-<li><a href="../2026-10-09-data-modelling-star-schema/">Star Schemas: Facts and Dimensions</a></li>
-  </ol>
-</div>
-<p>This is a post with executable code.</p>
-
-
-
- ]]></description>
-  <category>data-modelling</category>
-  <category>code</category>
-  <guid>https://ktruongme.github.io/posts/post-with-code/</guid>
-  <pubDate>Fri, 09 Oct 2026 00:00:00 GMT</pubDate>
-  <media:content url="https://ktruongme.github.io/posts/post-with-code/image.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>How the US Political System Works</title>
