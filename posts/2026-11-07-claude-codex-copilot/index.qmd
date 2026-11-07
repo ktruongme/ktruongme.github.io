@@ -4,7 +4,7 @@ description: "Which AI coding agents developers use most, what Anthropic, GitHub
 date: 2026-11-07
 categories: [ai, workflow, coding, tools]
 series: "AI in my workflow"
-series-part: 3
+series-part: 2
 tldr:
   - "Use **VS Code** with the agent's extension. Its chat runs the same agent as the terminal."
   - "Long tasks on a remote server: `claude`, `copilot` or `codex` in `tmux`, or Copilot's chat with **Session Target: Copilot**."
