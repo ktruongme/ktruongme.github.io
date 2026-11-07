@@ -9,6 +9,8 @@ website:
     right:
       - text: Series
         menu:
+          - text: AI in my workflow
+            href: series/ai-in-my-workflow.qmd
           - text: Data modelling
             href: series/data-modelling.qmd
       - about.qmd

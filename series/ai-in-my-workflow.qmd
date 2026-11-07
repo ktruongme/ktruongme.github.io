@@ -1,0 +1,14 @@
+---
+title: "AI in my workflow"
+subtitle: "The AI tools I use day to day, and how I set them up"
+listing:
+  contents: "../posts/*/index.qmd"
+  include:
+    series: "AI in my workflow"
+  sort: "series-part asc"
+  template: ../posts.ejs
+  fields: [date, title, subtitle, description, categories, reading-time, series-part]
+  date-format: "MMM D, YYYY"
+---
+
+Short, practical notes on the AI tools in my daily work, one piece at a time. It starts with dictation, because that's how I talk to most of the others.

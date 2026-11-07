@@ -1,0 +1,74 @@
+---
+title: "Free Local Dictation That Works Everywhere"
+subtitle: "Handy, Whisper and a laptop GPU, with no subscription"
+description: "A speech-to-text setup that runs offline, costs nothing and types into any app."
+date: 2026-11-07
+categories: [ai, workflow, tools]
+series: "AI in my workflow"
+series-part: 1
+---
+
+## The problem
+
+Working with AI tools means a lot of typing: in chat apps, coding assistants, the browser and the terminal. For long prompts, speaking is faster than typing. The dictation in Claude and ChatGPT is very good, but it only works inside those apps, and not always there either. For example, it doesn't work in the Claude Code extension for VS Code when VS Code is connected to a remote machine over SSH.
+
+The other options on Windows are weaker:
+
+- **Windows voice typing** (`Win + H`) works in every app, but it makes many more mistakes than the dictation in the chat apps.
+- **The GitHub Copilot app** (hold `Ctrl + Space`) uses a small model, NVIDIA's `nemotron-speech-streaming-en-0.6b`. It runs on the CPU, and you can't change the model.
+
+The goal is **one dictation tool for the whole computer** that types into whatever window is active. It should also be **free**, with no subscription and no word limit.
+
+Such a tool has two parts. **The model** turns speech into text: **Whisper** (from OpenAI) is the most widely used, and **Parakeet** (from NVIDIA) is its main competitor. **The app** handles the shortcut key, records your voice and pastes the text.
+
+## Handy: free, offline, open source
+
+[Handy](https://handy.computer) is a free, open-source app (MIT license) for Windows, macOS and Linux. You hold a shortcut key, speak, and release it. Handy then pastes the text where the cursor is. Everything runs on your own computer, and you choose the model.
+
+Among the free, open-source apps for Windows, Handy is by far the most popular:
+
+| App                    | GitHub stars | License | First release |
+|------------------------|-------------:|---------|---------------|
+| **Handy**              |       37,865 | MIT     | Jun 2025      |
+| OpenWhispr             |       10,910 | MIT     | Jul 2025      |
+| CapsWriter-Offline     |        7,083 | MIT     | May 2023      |
+| Whispering (Epicenter) |        4,840 | unclear | Mar 2023[^1]  |
+| Amical                 |        1,599 | MIT     | Jul 2025      |
+
+: Star counts on 7 November 2026. Stars only give a rough idea of popularity.
+
+[^1]: This date is for the whole Epicenter repository, which contains more than Whispering. Whispering itself was launched on Hacker News in August 2025.
+
+The best-known dictation app, **Wispr Flow**, runs in the cloud and is not fully free. Its results often feel better than plain Whisper or Parakeet because it also cleans up the text with AI, but the free plan allows only about **2,000 words a week** (after that it slows down, with a hard limit at 5,000 words).[^2] Since both apps work the same way, one option is to use Wispr Flow until the limit, then switch to Handy.
+
+[^2]: From Wispr Flow's documentation in November 2026. The limits can change at any time.
+
+Setup takes a few minutes:
+
+1.  Install Handy from a terminal with `winget install cjpais.Handy`, or download it from [handy.computer](https://handy.computer).
+2.  In the settings, download a model: **Whisper large-v3-turbo** if the computer has a GPU, or **Parakeet V3** if it only has a CPU.
+3.  Choose a shortcut key that other apps don't already use. For example, Copilot uses `Ctrl + Space`.
+
+## Does Handy really use the GPU?
+
+The test machine is a laptop with two GPUs: a built-in Intel GPU and an **NVIDIA RTX PRO 500** (6 GB memory, 40 W). `handy.exe` shows up in `nvidia-smi`, but that only means the app draws its window on the GPU. To check if the model itself runs on the GPU, measure the GPU once per second while dictating:
+
+``` powershell
+1..75 | % { nvidia-smi --query-gpu=utilization.gpu,memory.used --format=csv,noheader; Start-Sleep 1 }
+```
+
+The results show a clear pattern:
+
+- **While speaking:** the GPU is at 0% and uses 0 MiB of memory. Handy only records.
+- **After releasing the key:** the GPU works at **91% for about 1 second**, and memory goes from 0 to about **1 GB**. This is the model loading and transcribing.
+- **A little later:** the memory is free again, because Handy unloads the model when it isn't in use.
+
+What this means:
+
+- **"Speed" is the waiting time after you stop talking.** Whisper-type models transcribe the whole recording in one go. On this GPU the wait is about one second, which feels instant.
+- **Model size decides the memory use, not the length of the recording.** Speaking longer takes more time, not more memory.
+- **Bigger models fit in memory, but they are slower.** Handy rates Mistral's Voxtral Mini 3B better for English. It is about three times bigger, so each phrase could take around 3–4 seconds on this GPU. This is an estimate and hasn't been measured yet.
+
+## Recommended setup
+
+Handy with Whisper large-v3-turbo on an NVIDIA GPU: free, offline, no word limit, about one second per phrase, and it works in every app. The text is less polished than Wispr Flow's, but for prompts to an AI it is good enough.
