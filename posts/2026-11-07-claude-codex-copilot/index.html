@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2026-11-07">
-<meta name="description" content="Which AI coding agents developers use most, what Anthropic, GitHub and OpenAI offer, what ‘agent’ really means, and how to run one: in VS Code, in the terminal, or on a remote server.">
+<meta name="description" content="The most used AI coding agents, what each company offers, and how to run them in VS Code, in the terminal or on a remote server.">
 
 <title>AI Coding Agents in Practice: Claude Code, Copilot and Codex – myblog</title>
 <style>
@@ -329,6 +329,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#which-editor-developers-use" id="toc-which-editor-developers-use" class="nav-link" data-scroll-target="#which-editor-developers-use">Which editor developers use</a></li>
   <li><a href="#what-agent-means-in-practice" id="toc-what-agent-means-in-practice" class="nav-link" data-scroll-target="#what-agent-means-in-practice">What “agent” means in practice</a></li>
   <li><a href="#terminal-or-vs-code" id="toc-terminal-or-vs-code" class="nav-link" data-scroll-target="#terminal-or-vs-code">Terminal or VS Code?</a></li>
+  <li><a href="#recommended-setup" id="toc-recommended-setup" class="nav-link" data-scroll-target="#recommended-setup">Recommended setup</a></li>
   </ul>
 </nav>
     </div>
@@ -349,7 +350,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    Which AI coding agents developers use most, what Anthropic, GitHub and OpenAI offer, what ‘agent’ really means, and how to run one: in VS Code, in the terminal, or on a remote server.
+    The most used AI coding agents, what each company offers, and how to run them in VS Code, in the terminal or on a remote server.
   </div>
 </div>
 
@@ -612,7 +613,9 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
-<p>In practice:</p>
+</section>
+<section id="recommended-setup" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-setup">Recommended setup</h2>
 <ul>
 <li><strong>For one task:</strong> run the agent in a terminal and review its changes in the editor. VS Code’s built-in terminal puts both in one window. The extension works just as well: it is the same agent.</li>
 <li><strong>For long tasks on a remote server:</strong> run <code>claude</code>, <code>copilot</code> or <code>codex</code> inside <code>tmux</code>, a program that keeps terminal sessions running on the server. With Copilot, VS Code’s chat also works: start a new chat and set <strong>Session Target</strong> to <strong>Copilot</strong>, and it <a href="https://code.visualstudio.com/docs/agents/concepts/agent-host">keeps working</a> when the connection drops.</li>
