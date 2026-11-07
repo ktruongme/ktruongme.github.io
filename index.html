@@ -92,7 +92,7 @@ ul.task-list li input[type="checkbox"] {
     const options = {
       valueNames: ['listing-date','listing-title','listing-subtitle','listing-description','listing-categories','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-word-count-sort'] }],
       
-      searchColumns: ["listing-project","listing-website","listing-format","listing-engines","listing-language","listing-freeze","listing-title-block-banner","listing-toc","listing-toc-title","listing-reading-time","listing-title","listing-author","listing-date","listing-categories","listing-series","listing-series-part","listing-image","listing-path","listing-outputHref","listing-date-modified","listing-description","listing-filename","listing-file-modified","listing-word-count","listing-subtitle"],
+      searchColumns: ["listing-project","listing-website","listing-format","listing-engines","listing-language","listing-freeze","listing-title-block-banner","listing-toc","listing-toc-title","listing-reading-time","listing-title","listing-subtitle","listing-description","listing-date","listing-categories","listing-series","listing-series-part","listing-tldr","listing-path","listing-outputHref","listing-date-modified","listing-author","listing-filename","listing-file-modified","listing-word-count"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -342,10 +342,6 @@ window.Quarto = {
     <a class="dropdown-item" href="./series/ai-in-my-workflow.html">
  <span class="dropdown-text">AI in my workflow</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="./series/data-modelling.html">
- <span class="dropdown-text">Data modelling</span></a>
-  </li>  
     </ul>
   </li>
   <li class="nav-item">
@@ -377,7 +373,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div><div class="category" data-category="YWk=">ai <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Y29kZQ==">code <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZGF0YS1tb2RlbGxpbmc=">data-modelling <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bmV3cw==">news <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cG9saXRpY3M=">politics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dG9vbHM=">tools <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dXNh">usa <span class="quarto-category-count">(1)</span></div><div class="category" data-category="d29ya2Zsb3c=">workflow <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="YWk=">ai <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dG9vbHM=">tools <span class="quarto-category-count">(1)</span></div><div class="category" data-category="d29ya2Zsb3c=">workflow <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content" tabindex="-1">
 
@@ -411,7 +407,7 @@ window.Quarto = {
 
 
 <div class="quarto-listing quarto-listing-container-custom" id="listing-listing">
-<div class="post-item" data-index="0" data-categories="YWklMkN3b3JrZmxvdyUyQ3Rvb2xz" data-listing-date-sort="1794009600000" data-listing-file-modified-sort="1794058301771" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="913">
+<div class="post-item" data-index="0" data-categories="YWklMkN3b3JrZmxvdyUyQ3Rvb2xz" data-listing-date-sort="1794009600000" data-listing-file-modified-sort="1794058676974" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="913">
 <a class="post-link no-external" href="./posts/2026-11-07-local-dictation/index.html">
   <div class="post-meta">
     <span class="post-part">Part 1</span><span class="post-dot">·</span>
@@ -431,86 +427,6 @@ window.Quarto = {
 <span class="post-cat" onclick="window.quartoListingCategory(btoa(encodeURIComponent('workflow'))); return false;">workflow</span>
 
 <span class="post-cat" onclick="window.quartoListingCategory(btoa(encodeURIComponent('tools'))); return false;">tools</span>
-
-</div>
-</div>
-<div class="post-item" data-index="1" data-categories="ZGF0YS1tb2RlbGxpbmclMkNjb2Rl" data-listing-date-sort="1791504000000" data-listing-file-modified-sort="1794058301771" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="7">
-<a class="post-link no-external" href="./posts/post-with-code/index.html">
-  <div class="post-meta">
-    <span class="post-part">Part 1</span><span class="post-dot">·</span>
-    <span>Oct 9, 2026</span>
-    <span class="post-dot">·</span><span>1 min read</span>
-  </div>
-  <h3 class="post-title no-anchor">Post With Code</h3>
-  
-</a>
-<div class="post-desc">
-This is a post with executable code.
-</div>
-<div class="post-cats">
-
-<span class="post-cat" onclick="window.quartoListingCategory(btoa(encodeURIComponent('data-modelling'))); return false;">data-modelling</span>
-
-<span class="post-cat" onclick="window.quartoListingCategory(btoa(encodeURIComponent('code'))); return false;">code</span>
-
-</div>
-</div>
-<div class="post-item" data-index="2" data-categories="ZGF0YS1tb2RlbGxpbmc=" data-listing-date-sort="1791504000000" data-listing-file-modified-sort="1794058301771" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="108">
-<a class="post-link no-external" href="./posts/2026-10-09-data-modelling-star-schema/index.html">
-  <div class="post-meta">
-    <span class="post-part">Part 2</span><span class="post-dot">·</span>
-    <span>Oct 9, 2026</span>
-    <span class="post-dot">·</span><span>1 min read</span>
-  </div>
-  <h3 class="post-title no-anchor">Star Schemas: Facts and Dimensions</h3>
-  <p class="post-subtitle">Why analysts love a boring table layout</p>
-</a>
-<div class="post-desc">
-This is a placeholder article to show how a series looks. Replace or delete it.
-</div>
-<div class="post-cats">
-
-<span class="post-cat" onclick="window.quartoListingCategory(btoa(encodeURIComponent('data-modelling'))); return false;">data-modelling</span>
-
-</div>
-</div>
-<div class="post-item" data-index="3" data-categories="cG9saXRpY3MlMkN1c2E=" data-listing-date-sort="1791504000000" data-listing-file-modified-sort="1794058301771" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="237">
-<a class="post-link no-external" href="./posts/2026-10-09-us-political-system/index.html">
-  <div class="post-meta">
-    
-    <span>Oct 9, 2026</span>
-    <span class="post-dot">·</span><span>2 min read</span>
-  </div>
-  <h3 class="post-title no-anchor">How the US Political System Works</h3>
-  <p class="post-subtitle">Notes from someone used to a parliamentary system</p>
-</a>
-<div class="post-desc">
-This is a draft outline. Replace the <em>TODO</em> notes with your own writing.
-</div>
-<div class="post-cats">
-
-<span class="post-cat" onclick="window.quartoListingCategory(btoa(encodeURIComponent('politics'))); return false;">politics</span>
-
-<span class="post-cat" onclick="window.quartoListingCategory(btoa(encodeURIComponent('usa'))); return false;">usa</span>
-
-</div>
-</div>
-<div class="post-item" data-index="4" data-categories="bmV3cw==" data-listing-date-sort="1791244800000" data-listing-file-modified-sort="1794058301771" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="32">
-<a class="post-link no-external" href="./posts/welcome/index.html">
-  <div class="post-meta">
-    
-    <span>Oct 6, 2026</span>
-    <span class="post-dot">·</span><span>1 min read</span>
-  </div>
-  <h3 class="post-title no-anchor">Welcome To My Blog</h3>
-  
-</a>
-<div class="post-desc">
-This is the first post in a Quarto blog. Welcome!
-</div>
-<div class="post-cats">
-
-<span class="post-cat" onclick="window.quartoListingCategory(btoa(encodeURIComponent('news'))); return false;">news</span>
 
 </div>
 </div>

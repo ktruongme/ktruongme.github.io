@@ -26,6 +26,23 @@
 <li class="current"><span>Free Local Dictation That Works Everywhere</span></li>
   </ol>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>TL;DR
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Handy</strong> is a free, offline dictation app. It types into any app on Windows, macOS and Linux.</li>
+<li>With <strong>Whisper large-v3-turbo</strong> on a laptop NVIDIA GPU, each phrase takes about one second.</li>
+<li><strong>Wispr Flow</strong> gives more polished text, but its free plan allows only about 2,000 words a week.</li>
+</ul>
+</div>
+</div>
 <section id="the-problem" class="level2">
 <h2 class="anchored" data-anchor-id="the-problem">The problem</h2>
 <p>Working with AI tools means a lot of typing: in chat apps, coding assistants, the browser and the terminal. For long prompts, speaking is faster than typing. The dictation in Claude and ChatGPT is very good, but it only works inside those apps, and not always there either. For example, it doesn’t work in the Claude Code extension for VS Code when VS Code is connected to a remote machine over SSH.</p>
@@ -169,281 +186,6 @@ font-style: inherit;">}</span></span></code></pre></div></div>
   <category>tools</category>
   <guid>https://ktruongme.github.io/posts/2026-11-07-local-dictation/</guid>
   <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Post With Code</title>
-  <dc:creator>Harlow Malloc</dc:creator>
-  <link>https://ktruongme.github.io/posts/post-with-code/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<div class="series-box">
-  <div class="series-label">Part 1 of 2 · <a href="../../series/data-modelling.html">Data modelling</a></div>
-  <ol class="series-list">
-<li class="current"><span>Post With Code</span></li>
-<li><a href="../2026-10-09-data-modelling-star-schema/">Star Schemas: Facts and Dimensions</a></li>
-  </ol>
-</div>
-<p>This is a post with executable code.</p>
-
-
-
- ]]></description>
-  <category>data-modelling</category>
-  <category>code</category>
-  <guid>https://ktruongme.github.io/posts/post-with-code/</guid>
-  <pubDate>Fri, 09 Oct 2026 00:00:00 GMT</pubDate>
-  <media:content url="https://ktruongme.github.io/posts/post-with-code/image.jpg" medium="image" type="image/jpeg" height="96" width="144"/>
-</item>
-<item>
-  <title>Star Schemas: Facts and Dimensions</title>
-  <link>https://ktruongme.github.io/posts/2026-10-09-data-modelling-star-schema/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<div class="series-box">
-  <div class="series-label">Part 2 of 2 · <a href="../../series/data-modelling.html">Data modelling</a></div>
-  <ol class="series-list">
-<li><a href="../post-with-code/">Post With Code</a></li>
-<li class="current"><span>Star Schemas: Facts and Dimensions</span></li>
-  </ol>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Dummy post
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This is a placeholder article to show how a series looks. Replace or delete it.</p>
-</div>
-</div>
-<section id="the-idea" class="level2">
-<h2 class="anchored" data-anchor-id="the-idea">The idea</h2>
-<p>A <strong>star schema</strong> puts one big <em>fact</em> table (events you measure, like sales) in the middle, surrounded by small <em>dimension</em> tables (who, what, where, when).</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Table</th>
-<th>Example columns</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>fact_sales</code></td>
-<td><code>date_id</code>, <code>product_id</code>, <code>store_id</code>, <code>quantity</code>, <code>revenue</code></td>
-</tr>
-<tr class="even">
-<td><code>dim_product</code></td>
-<td><code>product_id</code>, <code>name</code>, <code>category</code>, <code>brand</code></td>
-</tr>
-<tr class="odd">
-<td><code>dim_store</code></td>
-<td><code>store_id</code>, <code>city</code>, <code>country</code></td>
-</tr>
-<tr class="even">
-<td><code>dim_date</code></td>
-<td><code>date_id</code>, <code>day</code>, <code>month</code>, <code>year</code>, <code>is_holiday</code></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="a-query" class="level2">
-<h2 class="anchored" data-anchor-id="a-query">A query</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">SELECT</span> d.<span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">year</span>, p.<span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">category</span>, <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">SUM</span>(f.revenue) <span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">AS</span> revenue</span>
-<span id="cb1-2"><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">FROM</span> fact_sales f</span>
-<span id="cb1-3"><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">JOIN</span> dim_date d    <span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">ON</span> f.date_id <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> d.date_id</span>
-<span id="cb1-4"><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">JOIN</span> dim_product p <span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">ON</span> f.product_id <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> p.product_id</span>
-<span id="cb1-5"><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">GROUP</span> <span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">BY</span> d.<span class="dt" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">year</span>, p.<span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">category</span>;</span></code></pre></div></div>
-<p><em>TODO: trade-offs versus a normalized (3NF) model.</em></p>
-
-
-</section>
-
- ]]></description>
-  <category>data-modelling</category>
-  <guid>https://ktruongme.github.io/posts/2026-10-09-data-modelling-star-schema/</guid>
-  <pubDate>Fri, 09 Oct 2026 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>How the US Political System Works</title>
-  <link>https://ktruongme.github.io/posts/2026-10-09-us-political-system/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Placeholder
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This is a draft outline. Replace the <em>TODO</em> notes with your own writing.</p>
-</div>
-</div>
-<section id="why-im-writing-this" class="level2">
-<h2 class="anchored" data-anchor-id="why-im-writing-this">Why I’m writing this</h2>
-<p><em>TODO: what made you curious, and who this post is for.</em></p>
-</section>
-<section id="the-constitution-and-separation-of-powers" class="level2">
-<h2 class="anchored" data-anchor-id="the-constitution-and-separation-of-powers">The Constitution and separation of powers</h2>
-<p>The US Constitution (1787) splits power between three branches that check each other:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Branch</th>
-<th>Who</th>
-<th>How they get there</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Legislative</td>
-<td>Congress: Senate (100) + House of Representatives (435)</td>
-<td>Elected: senators for 6 years, representatives for 2</td>
-</tr>
-<tr class="even">
-<td>Executive</td>
-<td>President</td>
-<td>Elected every 4 years, at most two terms</td>
-</tr>
-<tr class="odd">
-<td>Judicial</td>
-<td>Supreme Court (9 justices)</td>
-<td>Nominated by the president, confirmed by the Senate, serve for life</td>
-</tr>
-</tbody>
-</table>
-<p><em>TODO: examples of checks and balances, e.g.&nbsp;veto, impeachment, judicial review.</em></p>
-</section>
-<section id="federalism-the-role-of-the-states" class="level2">
-<h2 class="anchored" data-anchor-id="federalism-the-role-of-the-states">Federalism: the role of the states</h2>
-<p><em>TODO: what the 50 states decide themselves versus the federal government.</em></p>
-</section>
-<section id="elections-and-the-electoral-college" class="level2">
-<h2 class="anchored" data-anchor-id="elections-and-the-electoral-college">Elections and the Electoral College</h2>
-<p>The president is not chosen by the national popular vote but by 538 electors, and 270 are needed to win.<sup>1</sup></p>
-<p><em>TODO: how this shapes campaigns and “swing states”.</em></p>
-</section>
-<section id="why-two-parties" class="level2">
-<h2 class="anchored" data-anchor-id="why-two-parties">Why two parties?</h2>
-<p><em>TODO: first-past-the-post voting and its effects.</em></p>
-</section>
-<section id="compared-with-norway" class="level2">
-<h2 class="anchored" data-anchor-id="compared-with-norway">Compared with Norway</h2>
-<p><em>TODO: your comparison. Some starting points:</em></p>
-<ul>
-<li>Norway is a parliamentary system: the prime minister needs the support of the Storting (169 seats).</li>
-<li>Seats are shared by proportional representation, so many parties are in parliament.</li>
-<li>The Storting cannot be dissolved early, so elections are every four years.</li>
-</ul>
-</section>
-<section id="my-take" class="level2">
-<h2 class="anchored" data-anchor-id="my-take">My take</h2>
-<p><em>TODO</em></p>
-
-
-</section>
-
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>Most states give all their electors to the candidate who wins the state’s popular vote.↩︎</p></li>
-</ol>
-</section></div> ]]></description>
-  <category>politics</category>
-  <category>usa</category>
-  <guid>https://ktruongme.github.io/posts/2026-10-09-us-political-system/</guid>
-  <pubDate>Fri, 09 Oct 2026 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Welcome To My Blog</title>
-  <dc:creator>Tristan O&#39;Malley</dc:creator>
-  <link>https://ktruongme.github.io/posts/welcome/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p>This is the first post in a Quarto blog. Welcome!</p>
-<p><img src="https://ktruongme.github.io/posts/welcome/thumbnail.jpg" class="img-fluid"></p>
-<p>Since this post doesn’t specify an explicit <code>image</code>, the first image in the post will be used in the listing page of posts.</p>
-
-
-
- ]]></description>
-  <category>news</category>
-  <guid>https://ktruongme.github.io/posts/welcome/</guid>
-  <pubDate>Tue, 06 Oct 2026 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
