@@ -2,12 +2,14 @@
   {
     "listing": "/series/ai-in-my-workflow.html",
     "items": [
-      "/posts/2026-11-07-local-dictation/index.html"
+      "/posts/2026-11-07-local-dictation/index.html",
+      "/posts/2026-11-07-claude-codex-copilot/index.html"
     ]
   },
   {
     "listing": "/index.html",
     "items": [
+      "/posts/2026-11-07-claude-codex-copilot/index.html",
       "/posts/2026-11-07-local-dictation/index.html"
     ]
   }

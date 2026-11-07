@@ -11,14 +11,56 @@
     "href": "series/ai-in-my-workflow.html",
     "title": "AI in my workflow",
     "section": "",
-    "text": "Short, practical notes on the AI tools in my daily work, one piece at a time. It starts with dictation, because that’s how I talk to most of the others.\n\n\n\n\n\n\n\n  \n    Part 1·\n    Nov 7, 2026\n    ·6 min read\n  \n  Free Local Dictation That Works Everywhere\n  Handy, Whisper and a laptop GPU, with no subscription\n\n\nA speech-to-text setup that runs offline, costs nothing and types into any app.\n\n\n\nai\n\nworkflow\n\ntools\n\n\n\nNo matching items"
+    "text": "Short, practical notes on the AI tools in my daily work, one piece at a time. It starts with dictation, because that’s how I talk to most of the others.\n\n\n\n\n\n\n\n  \n    Part 1·\n    Nov 7, 2026\n    ·6 min read\n  \n  Free Local Dictation That Works Everywhere\n  Handy, Whisper and a laptop GPU, with no subscription\n\n\nA speech-to-text setup that runs offline, costs nothing and types into any app.\n\n\n\nai\n\nworkflow\n\ntools\n\n\n\n\n\n  \n    Part 3·\n    Nov 7, 2026\n    ·5 min read\n  \n  AI Coding Agents in Practice: Claude Code, Copilot and Codex\n  \n\n\nWhich AI coding agents developers use most, what Anthropic, GitHub and OpenAI offer, what ‘agent’ really means, and how to run one: in VS Code, in the terminal, or on a remote server.\n\n\n\nai\n\nworkflow\n\ncoding\n\ntools\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/2026-11-07-claude-codex-copilot/index.html",
+    "href": "posts/2026-11-07-claude-codex-copilot/index.html",
+    "title": "AI Coding Agents in Practice: Claude Code, Copilot and Codex",
+    "section": "",
+    "text": "Part 2 of 2 · AI in my workflow\n  \nFree Local Dictation That Works Everywhere\nAI Coding Agents in Practice: Claude Code, Copilot and Codex"
+  },
+  {
+    "objectID": "posts/2026-11-07-claude-codex-copilot/index.html#who-leads",
+    "href": "posts/2026-11-07-claude-codex-copilot/index.html#who-leads",
+    "title": "AI Coding Agents in Practice: Claude Code, Copilot and Codex",
+    "section": "Who leads",
+    "text": "Who leads\n\nThe eight most used tools in the Stack Overflow Developer Survey 2026, published in October 2026. The question: “Have you used any of the following coding agents or assistants in the past year?” 12,255 developers answered. Many use more than one tool, so the numbers add up to more than 100%.\n\n\nTool\nUsed in the past year\n\n\n\n\nClaude Code\n65.5%\n\n\nGitHub Copilot\n58.7%\n\n\nOpenAI Codex\n29.5%\n\n\nCursor\n25.5%\n\n\nGoogle Antigravity\n16.0%\n\n\nGemini Code Assist\n14.6%\n\n\nOpen Code\n13.6%\n\n\nJetBrains AI\n12.8%"
+  },
+  {
+    "objectID": "posts/2026-11-07-claude-codex-copilot/index.html#what-each-company-offers",
+    "href": "posts/2026-11-07-claude-codex-copilot/index.html#what-each-company-offers",
+    "title": "AI Coding Agents in Practice: Claude Code, Copilot and Codex",
+    "section": "What each company offers",
+    "text": "What each company offers\n\nThe products in November 2026, as named by each company. In VS Code, Claude Code and Codex are extensions you install from the Marketplace, while GitHub Copilot Chat comes built in. All three desktop apps run on Windows, macOS and Linux (Claude on Linux is in beta).\n\n\n\nAnthropic\nGitHub (Microsoft)\nOpenAI\n\n\n\n\nCoding brand\nClaude Code\nGitHub Copilot\nCodex\n\n\nWeb chat\nclaude.ai\ngithub.com/copilot\nchatgpt.com\n\n\nDesktop app\nClaude\nGitHub Copilot\nChatGPT\n\n\nVS Code\nClaude Code for VS Code\nGitHub Copilot Chat\nCodex – OpenAI’s coding agent\n\n\nTerminal\nclaude\ncopilot\ncodex\n\n\nCloud agent\nClaude Code in the cloud\nCopilot cloud agent\nCodex Cloud\n\n\nAI models\nClaude\nClaude, GPT, Gemini and others\nGPT"
+  },
+  {
+    "objectID": "posts/2026-11-07-claude-codex-copilot/index.html#which-editor-developers-use",
+    "href": "posts/2026-11-07-claude-codex-copilot/index.html#which-editor-developers-use",
+    "title": "AI Coding Agents in Practice: Claude Code, Copilot and Codex",
+    "section": "Which editor developers use",
+    "text": "Which editor developers use\n\nThe eight most used editors in the Stack Overflow Developer Survey 2026. The question: “Which development environments and code editors did you use regularly over the past year?” 13,193 developers answered. Many use more than one editor, so the numbers add up to more than 100%.\n\n\nEditor\nUsed regularly\n\n\n\n\nVisual Studio Code\n70.9%\n\n\nNotepad++\n27.8%\n\n\nVisual Studio\n27.6%\n\n\nVim\n27.2%\n\n\nIntelliJ IDEA\n24.3%\n\n\nCursor\n14.9%\n\n\nNeovim\n14.7%\n\n\nAndroid Studio\n14.2%"
+  },
+  {
+    "objectID": "posts/2026-11-07-claude-codex-copilot/index.html#what-agent-means-in-practice",
+    "href": "posts/2026-11-07-claude-codex-copilot/index.html#what-agent-means-in-practice",
+    "title": "AI Coding Agents in Practice: Claude Code, Copilot and Codex",
+    "section": "What “agent” means in practice",
+    "text": "What “agent” means in practice\nAn agent is an AI that works on a task by itself, step by step. It reads files, edits code and runs commands, checks the result, and continues. In daily talk, “an agent” points to one of three concrete things:\n\nFrom the official docs: VS Code sessions, Claude Code subagents, Copilot automations, Claude Code scheduled tasks, ChatGPT scheduled tasks, VS Code custom agents, Claude Agent SDK (“the same tools, agent loop, and context management that power Claude Code”), GitHub Copilot SDK (“the same agent runtime behind GitHub Copilot”).\n\n\n\nWhat it is\nWhat people say\nExamples\n\n\n\n\nSession\nOne running agent: a conversation in which the AI works on one task. You start it, a schedule starts it, or another session starts it (then it is called a subagent)\n“I use an agent for coding”, “I run four agents at once”, “My agents do this every morning”, “It started three subagents”\nA chat in the VS Code Chat view, a terminal window running claude, copilot or codex, a session in the desktop app. Started by a schedule: Copilot automations, Claude Code scheduled tasks, ChatGPT scheduled tasks\n\n\nCustom agent\nA text file with a name, instructions and the tools the AI may use. Nothing runs. Sessions and subagents start from it\n“I created my first agent”\n.github/agents/reviewer.agent.md in VS Code, .claude/agents/reviewer.md in Claude Code\n\n\nProgram\nYour own code that calls a model with tools in a loop. Claude Code and Copilot are programs like this\n“I built my first agent”\nClaude Agent SDK, GitHub Copilot SDK, OpenAI Agents SDK, LangChain\n\n\n\nMost of the time, “an agent” means a session. Where it runs does not matter. A chat in VS Code and a window in the terminal are both agents if the AI may edit files and run commands by itself. If it can only answer, it is a chat."
+  },
+  {
+    "objectID": "posts/2026-11-07-claude-codex-copilot/index.html#terminal-or-vs-code",
+    "href": "posts/2026-11-07-claude-codex-copilot/index.html#terminal-or-vs-code",
+    "title": "AI Coding Agents in Practice: Claude Code, Copilot and Codex",
+    "section": "Terminal or VS Code?",
+    "text": "Terminal or VS Code?\nA session can run in a terminal window or in the VS Code extension. No survey counts how many people use each. What exists are descriptions from experienced engineers and from the companies themselves:\n\nThese are descriptions, not measurements.\n\n\nWho\nSetup\nSource\n\n\n\n\nAbout 900 engineers in a 2026 survey\n“A terminal with Claude Code open to drive work, and an IDE also open to review changes made by the agent.” Described as a common setup\nPragmatic Engineer, Mar 2026\n\n\nBoris Cherny, creator of Claude Code (Anthropic)\nFive Claude sessions in numbered terminal tabs, plus five to ten more in the browser at claude.ai/code\nWrite-up of his post on X, Jan 2026\n\n\nThibault Sottiaux, engineering lead of Codex (OpenAI)\nCalls the IDE extension Codex’s “most successful surface” and recommends it to new users as “the lowest friction option”\nCerebral Valley interview, Jan 2026\n\n\n\nIn practice:\n\nFor one task: run the agent in a terminal and review its changes in the editor. VS Code’s built-in terminal puts both in one window. The extension works just as well: it is the same agent.\nFor long tasks on a remote server: run claude, copilot or codex inside tmux, a program that keeps terminal sessions running on the server. With Copilot, VS Code’s chat also works: start a new chat and set Session Target to Copilot, and it keeps working when the connection drops.\nFor several tasks at once: run several sessions, for example one per terminal tab or one per new chat. Give each session its own copy of the code (a git worktree), so they don’t change the same files. VS Code’s Agents window can set this up for you."
   },
   {
     "objectID": "posts/2026-11-07-local-dictation/index.html",
     "href": "posts/2026-11-07-local-dictation/index.html",
     "title": "Free Local Dictation That Works Everywhere",
     "section": "",
-    "text": "Part 1 of 1 · AI in my workflow\n  \nFree Local Dictation That Works Everywhere"
+    "text": "Part 1 of 2 · AI in my workflow\n  \nFree Local Dictation That Works Everywhere\nAI Coding Agents in Practice: Claude Code, Copilot and Codex"
   },
   {
     "objectID": "posts/2026-11-07-local-dictation/index.html#the-problem",
@@ -60,6 +102,6 @@
     "href": "index.html",
     "title": "myblog",
     "section": "",
-    "text": "A notebook · Est. 2026\n  Thinking out loud about machines, society, and life between two cultures.\n  Notes on machine learning and papers I read, essays on politics and society, and what I notice living in Norway with Vietnamese roots.\n\n\n\n\n\n\n\n\n  \n    Part 1·\n    Nov 7, 2026\n    ·6 min read\n  \n  Free Local Dictation That Works Everywhere\n  Handy, Whisper and a laptop GPU, with no subscription\n\n\nA speech-to-text setup that runs offline, costs nothing and types into any app.\n\n\n\nai\n\nworkflow\n\ntools\n\n\n\nNo matching items"
+    "text": "A notebook · Est. 2026\n  Thinking out loud about machines, society, and life between two cultures.\n  Notes on machine learning and papers I read, essays on politics and society, and what I notice living in Norway with Vietnamese roots.\n\n\n\n\n\n\n\n\n  \n    Part 3·\n    Nov 7, 2026\n    ·5 min read\n  \n  AI Coding Agents in Practice: Claude Code, Copilot and Codex\n  \n\n\nWhich AI coding agents developers use most, what Anthropic, GitHub and OpenAI offer, what ‘agent’ really means, and how to run one: in VS Code, in the terminal, or on a remote server.\n\n\n\nai\n\nworkflow\n\ncoding\n\ntools\n\n\n\n\n\n  \n    Part 1·\n    Nov 7, 2026\n    ·6 min read\n  \n  Free Local Dictation That Works Everywhere\n  Handy, Whisper and a laptop GPU, with no subscription\n\n\nA speech-to-text setup that runs offline, costs nothing and types into any app.\n\n\n\nai\n\nworkflow\n\ntools\n\n\n\nNo matching items"
   }
 ]

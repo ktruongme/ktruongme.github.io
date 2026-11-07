@@ -12,6 +12,273 @@
 <generator>quarto-1.11.9</generator>
 <lastBuildDate>Sat, 07 Nov 2026 00:00:00 GMT</lastBuildDate>
 <item>
+  <title>AI Coding Agents in Practice: Claude Code, Copilot and Codex</title>
+  <link>https://ktruongme.github.io/posts/2026-11-07-claude-codex-copilot/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<div class="series-box">
+  <div class="series-label">Part 2 of 2 · <a href="../../series/ai-in-my-workflow.html">AI in my workflow</a></div>
+  <ol class="series-list">
+<li><a href="../2026-11-07-local-dictation/">Free Local Dictation That Works Everywhere</a></li>
+<li class="current"><span>AI Coding Agents in Practice: Claude Code, Copilot and Codex</span></li>
+  </ol>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>TL;DR
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Use <strong>VS Code</strong> with the agent’s extension. Its chat runs the same agent as the terminal.</li>
+<li>Long tasks on a remote server: <code>claude</code>, <code>copilot</code> or <code>codex</code> in <code>tmux</code>, or Copilot’s chat with <strong>Session Target: Copilot</strong>.</li>
+<li>Several tasks: one session each, in separate git worktrees.</li>
+</ul>
+</div>
+</div>
+<section id="who-leads" class="level2">
+<h2 class="anchored" data-anchor-id="who-leads">Who leads</h2>
+<table class="caption-top table">
+<caption>The eight most used tools in the <a href="https://survey.stackoverflow.co/2026/ai/data/ai-code-agent">Stack Overflow Developer Survey 2026</a>, published in October 2026. The question: “Have you used any of the following coding agents or assistants in the past year?” 12,255 developers answered. Many use more than one tool, so the numbers add up to more than 100%.</caption>
+<thead>
+<tr class="header">
+<th>Tool</th>
+<th style="text-align: right;">Used in the past year</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Claude Code</strong></td>
+<td style="text-align: right;">65.5%</td>
+</tr>
+<tr class="even">
+<td><strong>GitHub Copilot</strong></td>
+<td style="text-align: right;">58.7%</td>
+</tr>
+<tr class="odd">
+<td><strong>OpenAI Codex</strong></td>
+<td style="text-align: right;">29.5%</td>
+</tr>
+<tr class="even">
+<td>Cursor</td>
+<td style="text-align: right;">25.5%</td>
+</tr>
+<tr class="odd">
+<td>Google Antigravity</td>
+<td style="text-align: right;">16.0%</td>
+</tr>
+<tr class="even">
+<td>Gemini Code Assist</td>
+<td style="text-align: right;">14.6%</td>
+</tr>
+<tr class="odd">
+<td>Open Code</td>
+<td style="text-align: right;">13.6%</td>
+</tr>
+<tr class="even">
+<td>JetBrains AI</td>
+<td style="text-align: right;">12.8%</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="what-each-company-offers" class="level2">
+<h2 class="anchored" data-anchor-id="what-each-company-offers">What each company offers</h2>
+<table class="caption-top table">
+<caption>The products in November 2026, as named by each company. In VS Code, Claude Code and Codex are extensions you install from the Marketplace, while GitHub Copilot Chat comes built in. All three desktop apps run on Windows, macOS and Linux (Claude on Linux is in beta).</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th>Anthropic</th>
+<th>GitHub (Microsoft)</th>
+<th>OpenAI</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Coding brand</strong></td>
+<td>Claude Code</td>
+<td>GitHub Copilot</td>
+<td>Codex</td>
+</tr>
+<tr class="even">
+<td><strong>Web chat</strong></td>
+<td><a href="https://claude.ai">claude.ai</a></td>
+<td><a href="https://github.com/copilot">github.com/copilot</a></td>
+<td><a href="https://chatgpt.com">chatgpt.com</a></td>
+</tr>
+<tr class="odd">
+<td><strong>Desktop app</strong></td>
+<td>Claude</td>
+<td>GitHub Copilot</td>
+<td>ChatGPT</td>
+</tr>
+<tr class="even">
+<td><strong>VS Code</strong></td>
+<td>Claude Code for VS Code</td>
+<td>GitHub Copilot Chat</td>
+<td>Codex – OpenAI’s coding agent</td>
+</tr>
+<tr class="odd">
+<td><strong>Terminal</strong></td>
+<td><code>claude</code></td>
+<td><code>copilot</code></td>
+<td><code>codex</code></td>
+</tr>
+<tr class="even">
+<td><strong>Cloud agent</strong></td>
+<td>Claude Code in the cloud</td>
+<td>Copilot cloud agent</td>
+<td>Codex Cloud</td>
+</tr>
+<tr class="odd">
+<td><strong>AI models</strong></td>
+<td>Claude</td>
+<td>Claude, GPT, Gemini and others</td>
+<td>GPT</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="which-editor-developers-use" class="level2">
+<h2 class="anchored" data-anchor-id="which-editor-developers-use">Which editor developers use</h2>
+<table class="caption-top table">
+<caption>The eight most used editors in the <a href="https://survey.stackoverflow.co/2026/technology/data/dev-ide">Stack Overflow Developer Survey 2026</a>. The question: “Which development environments and code editors did you use regularly over the past year?” 13,193 developers answered. Many use more than one editor, so the numbers add up to more than 100%.</caption>
+<thead>
+<tr class="header">
+<th>Editor</th>
+<th style="text-align: right;">Used regularly</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Visual Studio Code</strong></td>
+<td style="text-align: right;">70.9%</td>
+</tr>
+<tr class="even">
+<td>Notepad++</td>
+<td style="text-align: right;">27.8%</td>
+</tr>
+<tr class="odd">
+<td>Visual Studio</td>
+<td style="text-align: right;">27.6%</td>
+</tr>
+<tr class="even">
+<td>Vim</td>
+<td style="text-align: right;">27.2%</td>
+</tr>
+<tr class="odd">
+<td>IntelliJ IDEA</td>
+<td style="text-align: right;">24.3%</td>
+</tr>
+<tr class="even">
+<td>Cursor</td>
+<td style="text-align: right;">14.9%</td>
+</tr>
+<tr class="odd">
+<td>Neovim</td>
+<td style="text-align: right;">14.7%</td>
+</tr>
+<tr class="even">
+<td>Android Studio</td>
+<td style="text-align: right;">14.2%</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="what-agent-means-in-practice" class="level2">
+<h2 class="anchored" data-anchor-id="what-agent-means-in-practice">What “agent” means in practice</h2>
+<p>An agent is an AI that works on a task by itself, step by step. It reads files, edits code and runs commands, checks the result, and continues. In daily talk, “an agent” points to one of three concrete things:</p>
+<table class="caption-top table">
+<caption>From the official docs: <a href="https://code.visualstudio.com/docs/agents/concepts/sessions">VS Code sessions</a>, <a href="https://code.claude.com/docs/en/sub-agents">Claude Code subagents</a>, <a href="https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent/create-automations">Copilot automations</a>, <a href="https://code.claude.com/docs/en/routines">Claude Code scheduled tasks</a>, <a href="https://developers.openai.com/codex/app/automations">ChatGPT scheduled tasks</a>, <a href="https://code.visualstudio.com/docs/agent-customization/custom-agents">VS Code custom agents</a>, <a href="https://code.claude.com/docs/en/agent-sdk/overview">Claude Agent SDK</a> (“the same tools, agent loop, and context management that power Claude Code”), <a href="https://github.blog/changelog/2026-06-02-copilot-sdk-is-now-generally-available/">GitHub Copilot SDK</a> (“the same agent runtime behind GitHub Copilot”).</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th>What it is</th>
+<th>What people say</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Session</strong></td>
+<td>One running agent: a conversation in which the AI works on one task. You start it, a schedule starts it, or another session starts it (then it is called a subagent)</td>
+<td>“I use an agent for coding”, “I run four agents at once”, “My agents do this every morning”, “It started three subagents”</td>
+<td>A chat in the VS Code Chat view, a terminal window running <code>claude</code>, <code>copilot</code> or <code>codex</code>, a session in the desktop app. Started by a schedule: Copilot automations, Claude Code scheduled tasks, ChatGPT scheduled tasks</td>
+</tr>
+<tr class="even">
+<td><strong>Custom agent</strong></td>
+<td>A text file with a name, instructions and the tools the AI may use. Nothing runs. Sessions and subagents start from it</td>
+<td>“I created my first agent”</td>
+<td><code>.github/agents/reviewer.agent.md</code> in VS Code, <code>.claude/agents/reviewer.md</code> in Claude Code</td>
+</tr>
+<tr class="odd">
+<td><strong>Program</strong></td>
+<td>Your own code that calls a model with tools in a loop. Claude Code and Copilot are programs like this</td>
+<td>“I built my first agent”</td>
+<td>Claude Agent SDK, GitHub Copilot SDK, OpenAI Agents SDK, LangChain</td>
+</tr>
+</tbody>
+</table>
+<p>Most of the time, “an agent” means a session. Where it runs does not matter. A chat in VS Code and a window in the terminal are both agents if the AI may edit files and run commands by itself. If it can only answer, it is a chat.</p>
+</section>
+<section id="terminal-or-vs-code" class="level2">
+<h2 class="anchored" data-anchor-id="terminal-or-vs-code">Terminal or VS Code?</h2>
+<p>A session can run in a terminal window or in the VS Code extension. No survey counts how many people use each. What exists are descriptions from experienced engineers and from the companies themselves:</p>
+<table class="caption-top table">
+<caption>These are descriptions, not measurements.</caption>
+<thead>
+<tr class="header">
+<th>Who</th>
+<th>Setup</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>About 900 engineers in a 2026 survey</td>
+<td>“A terminal with Claude Code open to drive work, and an IDE also open to review changes made by the agent.” Described as a common setup</td>
+<td><a href="https://newsletter.pragmaticengineer.com/p/ai-tooling-2026">Pragmatic Engineer</a>, Mar 2026</td>
+</tr>
+<tr class="even">
+<td>Boris Cherny, creator of Claude Code (Anthropic)</td>
+<td>Five Claude sessions in numbered terminal tabs, plus five to ten more in the browser at claude.ai/code</td>
+<td><a href="https://www.educative.io/newsletter/artificial-intelligence/claude-code-creators-workflow">Write-up of his post on X</a>, Jan 2026</td>
+</tr>
+<tr class="odd">
+<td>Thibault Sottiaux, engineering lead of Codex (OpenAI)</td>
+<td>Calls the IDE extension Codex’s “most successful surface” and recommends it to new users as “the lowest friction option”</td>
+<td><a href="https://cerebralvalley.beehiiv.com/p/openai-s-codex-lets-one-engineer-ship-like-a-team-of-ten">Cerebral Valley interview</a>, Jan 2026</td>
+</tr>
+</tbody>
+</table>
+<p>In practice:</p>
+<ul>
+<li><strong>For one task:</strong> run the agent in a terminal and review its changes in the editor. VS Code’s built-in terminal puts both in one window. The extension works just as well: it is the same agent.</li>
+<li><strong>For long tasks on a remote server:</strong> run <code>claude</code>, <code>copilot</code> or <code>codex</code> inside <code>tmux</code>, a program that keeps terminal sessions running on the server. With Copilot, VS Code’s chat also works: start a new chat and set <strong>Session Target</strong> to <strong>Copilot</strong>, and it <a href="https://code.visualstudio.com/docs/agents/concepts/agent-host">keeps working</a> when the connection drops.</li>
+<li><strong>For several tasks at once:</strong> run several sessions, for example one per terminal tab or one per new chat. Give each session its own copy of the code (a git worktree), so they don’t change the same files. VS Code’s <a href="https://code.visualstudio.com/docs/agents/run/agents-window">Agents window</a> can set this up for you.</li>
+</ul>
+
+
+</section>
+
+ ]]></description>
+  <category>ai</category>
+  <category>workflow</category>
+  <category>coding</category>
+  <category>tools</category>
+  <guid>https://ktruongme.github.io/posts/2026-11-07-claude-codex-copilot/</guid>
+  <pubDate>Sat, 07 Nov 2026 00:00:00 GMT</pubDate>
+</item>
+<item>
   <title>Free Local Dictation That Works Everywhere</title>
   <link>https://ktruongme.github.io/posts/2026-11-07-local-dictation/</link>
   <description><![CDATA[ 
@@ -21,9 +288,10 @@
 
 
 <div class="series-box">
-  <div class="series-label">Part 1 of 1 · <a href="../../series/ai-in-my-workflow.html">AI in my workflow</a></div>
+  <div class="series-label">Part 1 of 2 · <a href="../../series/ai-in-my-workflow.html">AI in my workflow</a></div>
   <ol class="series-list">
 <li class="current"><span>Free Local Dictation That Works Everywhere</span></li>
+<li><a href="../2026-11-07-claude-codex-copilot/">AI Coding Agents in Practice: Claude Code, Copilot and Codex</a></li>
   </ol>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
