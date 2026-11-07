@@ -7,27 +7,25 @@ categories: [ai, workflow, tools]
 series: "AI in my workflow"
 series-part: 1
 tldr:
-  - "**Handy** is a free, offline dictation app. It types into any app on Windows, macOS and Linux."
-  - "With **Whisper large-v3-turbo** on a laptop NVIDIA GPU, each phrase takes about one second."
-  - "**Wispr Flow** gives more polished text, but its free plan allows only about 2,000 words a week."
+  - "**Handy** is the top free, offline dictation app. Install it from [handy.computer](https://handy.computer)."
+  - "In its settings, choose the **Whisper large-v3-turbo** model and an unused shortcut key, for example `Caps Lock`."
 ---
 
 ## The problem
 
-Working with AI tools means a lot of typing: in chat apps, coding assistants, the browser and the terminal. For long prompts, speaking is faster than typing. The dictation in Claude and ChatGPT is very good, but it only works inside those apps, and not always there either. For example, it doesn't work in the Claude Code extension for VS Code when VS Code is connected to a remote machine over SSH.
+Working with AI tools means a lot of typing: in chat apps, coding assistants, the browser and the terminal. For long prompts, speaking is faster than typing. But the existing dictation options each have a problem.
 
-The other options on Windows are weaker:
+**Dictation inside AI apps only works in that app.** The dictation in Claude and ChatGPT is very good, but it only works inside those apps, and not always there either. For example, it doesn't work in the Claude Code extension for VS Code when VS Code is connected to a remote machine over SSH. The GitHub Copilot app also has its own dictation, but it uses a fixed model that you can't change: NVIDIA's `nemotron-speech-streaming-en-0.6b`, a small English-only model that runs on your own computer.
 
-- **Windows voice typing** (`Win + H`) works in every app, but it makes many more mistakes than the dictation in the chat apps.
-- **The GitHub Copilot app** (hold `Ctrl + Space`) uses a small model, NVIDIA's `nemotron-speech-streaming-en-0.6b`. It runs on the CPU, and you can't change the model.
+**Dictation that works everywhere is weaker.** Windows voice typing (`Win + H`) works in every app, but it makes many more mistakes than the dictation in the AI apps. It sends your audio to Microsoft's cloud speech service, and Microsoft doesn't say which model it uses.
 
 The goal is **one dictation tool for the whole computer** that types into whatever window is active. It should also be **free**, with no subscription and no word limit.
 
-Such a tool has two parts. **The model** turns speech into text: **Whisper** (from OpenAI) is the most widely used, and **Parakeet** (from NVIDIA) is its main competitor. **The app** handles the shortcut key, records your voice and pastes the text.
+Such a tool has two parts: **the app** handles the shortcut key, records your voice and pastes the text, and **the model** turns the speech into text.
 
 ## Handy: free, offline, open source
 
-[Handy](https://handy.computer) is a free, open-source app (MIT license) for Windows, macOS and Linux. You hold a shortcut key, speak, and release it. Handy then pastes the text where the cursor is. Everything runs on your own computer, and you choose the model.
+[Handy](https://handy.computer) is a free, open-source app (MIT license) for Windows, macOS and Linux. You hold a shortcut key, speak, and release it. Handy then pastes the text where the cursor is. Everything runs on your own computer, and you choose the model. Pick a shortcut key that other apps don't already use, for example `Caps Lock`.
 
 Among the free, open-source apps for Windows, Handy is by far the most popular:
 
@@ -43,15 +41,21 @@ Among the free, open-source apps for Windows, Handy is by far the most popular:
 
 [^1]: This date is for the whole Epicenter repository, which contains more than Whispering. Whispering itself was launched on Hacker News in August 2025.
 
-The best-known dictation app, **Wispr Flow**, runs in the cloud and is not fully free. Its results often feel better than plain Whisper or Parakeet because it also cleans up the text with AI, but the free plan allows only about **2,000 words a week** (after that it slows down, with a hard limit at 5,000 words).[^2] Since both apps work the same way, one option is to use Wispr Flow until the limit, then switch to Handy.
+Handy lets you choose between several models. The main ones:
+
+| Model | Made by | Size | First release | Languages | Good for |
+|--------------------|----------|-------:|------------|--------------------|------------------------------|
+| **Whisper large-v3-turbo** | OpenAI | 0.8B | Oct 2024 | About 99, incl. Norwegian and Vietnamese | Accents and many languages. Best with a GPU |
+| Whisper large-v3 | OpenAI | 1.6B | Nov 2023 | About 99, incl. Norwegian and Vietnamese | Slightly more accurate than turbo, but much slower |
+| Parakeet V3 | NVIDIA | 0.6B | Aug 2025 | 25 European | Fast English, even on a CPU |
+| Nemotron Streaming 3.5 | NVIDIA | 0.6B | Jun 2026 | 32, incl. Norwegian and Vietnamese | Live text while you speak, but less accurate |
+| Voxtral Mini 3B | Mistral | 3B | Jul 2025 | 8 major ones, incl. English | Highest accuracy grade in Handy, but slower and needs more memory |
+
+: Size in billions of parameters. Parakeet scores best on English benchmarks, but test both Whisper and Parakeet on your own voice. {tbl-colwidths="[20,10,8,12,20,30]"}
+
+The best-known dictation app, **Wispr Flow**, runs in the cloud and is not fully free. Its results often feel better than the models in Handy because it also cleans up the text with AI, but the free plan allows only about **2,000 words a week** (after that it slows down, with a hard limit at 5,000 words).[^2] Since both apps work the same way, one option is to use Wispr Flow until the limit, then switch to Handy.
 
 [^2]: From Wispr Flow's documentation in November 2026. The limits can change at any time.
-
-Setup takes a few minutes:
-
-1.  Install Handy from a terminal with `winget install cjpais.Handy`, or download it from [handy.computer](https://handy.computer).
-2.  In the settings, download a model: **Whisper large-v3-turbo** if the computer has a GPU, or **Parakeet V3** if it only has a CPU.
-3.  Choose a shortcut key that other apps don't already use. For example, Copilot uses `Ctrl + Space`.
 
 ## Does Handy really use the GPU?
 
@@ -67,7 +71,7 @@ The results show a clear pattern:
 - **After releasing the key:** the GPU works at **91% for about 1 second**, and memory goes from 0 to about **1 GB**. This is the model loading and transcribing.
 - **A little later:** the memory is free again, because Handy unloads the model when it isn't in use.
 
-What this means:
+Good to know about speed and memory:
 
 - **"Speed" is the waiting time after you stop talking.** Whisper-type models transcribe the whole recording in one go. On this GPU the wait is about one second, which feels instant.
 - **Model size decides the memory use, not the length of the recording.** Speaking longer takes more time, not more memory.
