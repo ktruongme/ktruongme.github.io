@@ -1,6 +1,6 @@
 ---
 title: "AI Coding Agents in Practice: Claude Code, Copilot and Codex"
-description: "Which AI coding agents developers use most, what Anthropic, GitHub and OpenAI offer, what 'agent' really means, and how to run one: in VS Code, in the terminal, or on a remote server."
+description: "The most used AI coding agents, what each company offers, and how to run them in VS Code, in the terminal or on a remote server."
 date: 2026-11-07
 categories: [ai, workflow, coding, tools]
 series: "AI in my workflow"
@@ -81,7 +81,7 @@ A session can run in a terminal window or in the VS Code extension. No survey co
 
 : These are descriptions, not measurements.
 
-In practice:
+## Recommended setup
 
 - **For one task:** run the agent in a terminal and review its changes in the editor. VS Code's built-in terminal puts both in one window. The extension works just as well: it is the same agent.
 - **For long tasks on a remote server:** run `claude`, `copilot` or `codex` inside `tmux`, a program that keeps terminal sessions running on the server. With Copilot, VS Code's chat also works: start a new chat and set **Session Target** to **Copilot**, and it [keeps working](https://code.visualstudio.com/docs/agents/concepts/agent-host) when the connection drops.

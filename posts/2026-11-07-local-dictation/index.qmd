@@ -1,6 +1,5 @@
 ---
 title: "Free Local Dictation That Works Everywhere"
-subtitle: "Handy, Whisper and a laptop GPU, with no subscription"
 description: "A speech-to-text setup that runs offline, costs nothing and types into any app."
 date: 2026-11-07
 categories: [ai, workflow, tools]
