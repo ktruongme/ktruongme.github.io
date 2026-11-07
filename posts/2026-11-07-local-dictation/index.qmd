@@ -43,14 +43,14 @@ Among the free, open-source apps for Windows, Handy is by far the most popular:
 Handy lets you choose between several models. The main ones:
 
 | Model | Made by | Size | First release | Languages | Good for |
-|--------------------|----------|-------:|------------|--------------------|------------------------------|
+|------------|------------|-----------:|------------|------------|---------------|
 | **Whisper large-v3-turbo** | OpenAI | 0.8B | Oct 2024 | About 99, incl. Norwegian and Vietnamese | Accents and many languages. Best with a GPU |
 | Whisper large-v3 | OpenAI | 1.6B | Nov 2023 | About 99, incl. Norwegian and Vietnamese | Slightly more accurate than turbo, but much slower |
 | Parakeet V3 | NVIDIA | 0.6B | Aug 2025 | 25 European | Fast English, even on a CPU |
 | Nemotron Streaming 3.5 | NVIDIA | 0.6B | Jun 2026 | 32, incl. Norwegian and Vietnamese | Live text while you speak, but less accurate |
 | Voxtral Mini 3B | Mistral | 3B | Jul 2025 | 8 major ones, incl. English | Highest accuracy grade in Handy, but slower and needs more memory |
 
-: Size in billions of parameters. Parakeet scores best on English benchmarks, but test both Whisper and Parakeet on your own voice. {tbl-colwidths="[20,10,8,12,20,30]"}
+: Size in billions of parameters. Parakeet scores best on English benchmarks, but test both Whisper and Parakeet on your own voice.
 
 The best-known dictation app, **Wispr Flow**, runs in the cloud and is not fully free. Its results often feel better than the models in Handy because it also cleans up the text with AI, but the free plan allows only about **2,000 words a week** (after that it slows down, with a hard limit at 5,000 words).[^2] Since both apps work the same way, one option is to use Wispr Flow until the limit, then switch to Handy.
 
